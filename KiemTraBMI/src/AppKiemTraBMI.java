@@ -3,12 +3,19 @@ import java.util.Scanner;
 public class AppKiemTraBMI {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.print("Nhập chiều cao (m): ");
-		float chieuCao = sc.nextFloat();
-		System.out.print("Nhập cân nặng (kg): ");
-		float canNang = sc.nextFloat();
-		
+		float chieuCao = -1,canNang = -1;
+		do {
+			try {
+				System.out.print("Nhập chiều cao (m): ");
+				chieuCao = sc.nextFloat();
+				System.out.print("Nhập cân nặng (kg): ");
+				canNang = sc.nextFloat();
+			} catch (Exception e) {
+				System.out.println("Vui lòng nhập đúng kí tự số");
+				sc.next();
+			}
+		}while(chieuCao <= 0 || canNang <= 0);
+	
 		float bmi = (float) (canNang / (Math.pow(chieuCao, 2)));
 		System.out.println("BMI của bạn là " + bmi);
 		if(bmi < 18.5) {
