@@ -19,6 +19,11 @@ public class Citizen {
 	}
 
 
+	public Citizen() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String getId() {
 		return id;
 	}
