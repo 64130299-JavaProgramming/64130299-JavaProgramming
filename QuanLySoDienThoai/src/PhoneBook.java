@@ -24,7 +24,7 @@ public class PhoneBook implements Phone {
 	                return; // Không cần tiếp tục thực hiện nếu số đã tồn tại
 	            } else {
 	                // Cập nhật thêm số điện thoại mới vào bản ghi
-	                phoneList.set(i, phoneRecord + " , " + phone);
+	                phoneList.set(i, phoneRecord + " : " + phone);
 	                System.out.println("Đã cập nhật sđt " + phone + " của " + name + " vào danh sách.");
 	                return;
 	            }
