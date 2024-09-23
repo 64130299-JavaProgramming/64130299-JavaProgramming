@@ -65,7 +65,7 @@ public class Book implements IBook{
 	}
 
 	public void setPriceList(int[] priceList) {
-		priceList = priceList;
+		this.priceList = priceList;
 	}
 	
 	public void calculate() {
@@ -73,7 +73,7 @@ public class Book implements IBook{
 		for(int i = 0 ; i < priceList.length ; i++) {
 			sum = sum + priceList[i];
 		}
-		averagePrice = sum / priceList.length;
+		averagePrice = (float)sum / priceList.length;
 	}
 	
 }
