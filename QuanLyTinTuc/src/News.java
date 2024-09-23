@@ -72,7 +72,7 @@ public class News implements INews {
 	public void Calculate() {
 		int sum = 0;
 		for(int i = 0; i < rateList.length; i++) {
-			sum = sum + i;
+			sum = sum + rateList[i];
 		}
 		averageRate = sum / rateList.length;
 	}
