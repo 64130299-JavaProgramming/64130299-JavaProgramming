@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_QuanLyBanHang.MainController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_QuanLyBanHang.MainController">
    <children>
-      <GridPane hgap="30.0" layoutX="114.0" layoutY="48.0" prefHeight="100.0" prefWidth="300.0" vgap="15.0">
+      <GridPane hgap="30.0" layoutX="150.0" layoutY="34.0" prefHeight="122.0" prefWidth="295.0" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #cccccc; -fx-border-radius: 5;" vgap="20.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -27,7 +27,7 @@
             <RowConstraints minHeight="10.0" prefHeight="53.19998779296875" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Id" GridPane.halignment="RIGHT">
+            <Label style="-fx-text-fill: #333;" text="Id" GridPane.halignment="RIGHT">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -35,36 +35,85 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="idField" GridPane.columnIndex="1" />
-            <Label text="Tên sản phẩm" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-            <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Giá sản phẩm" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-            <TextField fx:id="priceField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label text="Mô tả" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
-            <TextField fx:id="descriptionField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="idField" style="-fx-background-color: #f9f9f9; -fx-border-color: #ccc; -fx-border-radius: 4;" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></TextField>
+            <Label style="-fx-text-fill: #333;" text="Tên sản phẩm" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <TextField fx:id="nameField" style="-fx-background-color: #f9f9f9; -fx-border-color: #ccc; -fx-border-radius: 4;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label style="-fx-text-fill: #333;" text="Giá sản phẩm" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <TextField fx:id="priceField" style="-fx-background-color: #f9f9f9; -fx-border-color: #ccc; -fx-border-radius: 4;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label style="-fx-text-fill: #333;" text="Mô tả" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <TextField fx:id="descriptionField" style="-fx-background-color: #f9f9f9; -fx-border-color: #ccc; -fx-border-radius: 4;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Label layoutX="227.0" layoutY="8.0" prefHeight="27.0" prefWidth="146.0" text="Quản lý bán hàng">
+      <Label layoutX="227.0" layoutY="8.0" prefHeight="27.0" prefWidth="146.0" style="-fx-text-fill: #2a2a2a;" text="Quản lý bán hàng">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <HBox layoutX="150.0" layoutY="173.0" prefHeight="30.0" prefWidth="310.0" spacing="12.0">
+      <HBox layoutX="150.0" layoutY="191.0" prefHeight="30.0" prefWidth="310.0" spacing="12.0">
          <children>
-            <Button fx:id="addButton" mnemonicParsing="false" text="Thêm" />
-            <Button fx:id="deleteButton" mnemonicParsing="false" text="Xóa" />
-            <Button fx:id="editButton" mnemonicParsing="false" text="Sửa" />
-            <Button fx:id="updateButton" mnemonicParsing="false" text="Cập nhật" />
-            <Button fx:id="searchButton" mnemonicParsing="false" text="Tìm kiếm" />
+            <Button fx:id="addButton" mnemonicParsing="false" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Thêm" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Xóa" />
+            <Button fx:id="editButton" mnemonicParsing="false" style="-fx-background-color: #FF9800; -fx-text-fill: white;" text="Sửa" />
+            <Button fx:id="updateButton" mnemonicParsing="false" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Cập nhật" />
+            <Button fx:id="searchButton" mnemonicParsing="false" style="-fx-background-color: #9C27B0; -fx-text-fill: white;" text="Tìm kiếm" />
          </children>
       </HBox>
-      <TableView fx:id="productTable" layoutX="50.0" layoutY="228.0" prefHeight="130.0" prefWidth="500.0">
-        <columns>
-          <TableColumn fx:id="idColumn" prefWidth="57.5999755859375" text="Id" />
-          <TableColumn fx:id="nameColumn" prefWidth="109.60003662109375" text="Tên sản phẩm" />
-            <TableColumn fx:id="priceColumn" prefWidth="86.39996337890625" text="Giá sản phẩm" />
-            <TableColumn fx:id="descriptionColumn" prefWidth="244.79998779296875" text="Mô tả" />
-        </columns>
-      </TableView>
+      <TableView fx:id="productTable" layoutX="50.0" layoutY="228.0" prefHeight="130.0" prefWidth="500.0" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5; -fx-table-cell-border-color: transparent;">
+    <columns>
+        <TableColumn fx:id="idColumn" prefWidth="57.5999755859375" text="Id" style="-fx-alignment: CENTER; -fx-background-color: #f1f1f1;">
+            <style>
+                .column-header {
+                    -fx-background-color: #4CAF50;
+                    -fx-text-fill: white;
+                    -fx-font-weight: bold;
+                }
+            </style>
+        </TableColumn>
+        <TableColumn fx:id="nameColumn" prefWidth="109.60003662109375" text="Tên sản phẩm" style="-fx-alignment: CENTER; -fx-background-color: #f9f9f9;">
+            <style>
+                .column-header {
+                    -fx-background-color: #4CAF50;
+                    -fx-text-fill: white;
+                    -fx-font-weight: bold;
+                }
+            </style>
+        </TableColumn>
+        <TableColumn fx:id="priceColumn" prefWidth="86.39996337890625" text="Giá sản phẩm" style="-fx-alignment: CENTER; -fx-background-color: #f1f1f1;">
+            <style>
+                .column-header {
+                    -fx-background-color: #4CAF50;
+                    -fx-text-fill: white;
+                    -fx-font-weight: bold;
+                }
+            </style>
+        </TableColumn>
+        <TableColumn fx:id="descriptionColumn" prefWidth="244.79998779296875" text="Mô tả" style="-fx-alignment: CENTER-LEFT; -fx-background-color: #f9f9f9;">
+            <style>
+                .column-header {
+                    -fx-background-color: #4CAF50;
+                    -fx-text-fill: white;
+                    -fx-font-weight: bold;
+                }
+            </style>
+        </TableColumn>
+    </columns>
+    <style>
+        .table-row-cell {
+            -fx-border-color: transparent;
+        }
+        .table-row-cell:selected {
+            -fx-background-color: #2196F3;
+            -fx-text-fill: white;
+        }
+        .table-cell {
+            -fx-padding: 10;
+            -fx-border-color: transparent;
+        }
+    </style>
+</TableView>
+
    </children>
 </Pane>
