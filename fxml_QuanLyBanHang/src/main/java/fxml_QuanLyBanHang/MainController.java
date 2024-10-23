@@ -91,7 +91,14 @@ public class MainController {
 			}
 		});
 		editButton.setOnAction(e -> editProduct());
-		updateButton.setOnAction(e -> updateProduct());
+		updateButton.setOnAction(e -> {
+			try {
+				updateProduct();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 		searchButton.setOnAction(e -> {
 			try {
 				searchProduct();
@@ -127,6 +134,8 @@ public class MainController {
 		preparedStatement.setDouble(2, Double.parseDouble(priceField.getText()));
 		preparedStatement.setString(3, descriptionField.getText());
 		preparedStatement.executeUpdate();
+		productList.clear();
+		loadProduct();
 	}
 	//Tìm kiếm sản phẩm
 	private void searchProduct() throws SQLException {
@@ -144,9 +153,17 @@ public class MainController {
 		}
 	}
 
-	private Object updateProduct() {
-		// TODO Auto-generated method stub
-		return null;
+	private void updateProduct() throws SQLException {
+		String query = "UPDATE sanpham SET TenSP = ?, GiaSP = ?, MoTa = ? WHERE id = ? ";
+		PreparedStatement preparedStatement = connection.prepareStatement(query);
+		preparedStatement.setString(1,nameField.getText());
+		preparedStatement.setDouble(2, Double.parseDouble(priceField.getText()));
+		preparedStatement.setString(3, descriptionField.getText());
+		preparedStatement.setInt(4, Integer.parseInt(idField.getText()));
+		preparedStatement.executeUpdate();
+		productList.clear();
+		loadProduct();
+		
 	}
 
 	private Object editProduct() {
@@ -160,5 +177,6 @@ public class MainController {
 		preparedStatement.setInt(1, Integer.parseInt(idField.getText()));
 		preparedStatement.executeUpdate();
 		productList.clear();
+		loadProduct();
 	}
 }
