@@ -82,7 +82,14 @@ public class MainController {
 				e1.printStackTrace();
 			}
 		});
-		deleteButton.setOnAction(e -> deleteProduct());
+		deleteButton.setOnAction(e -> {
+			try {
+				deleteProduct();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 		editButton.setOnAction(e -> editProduct());
 		updateButton.setOnAction(e -> updateProduct());
 		searchButton.setOnAction(e -> {
@@ -127,8 +134,8 @@ public class MainController {
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 		preparedStatement.setString(1, "%" + nameField.getText() + "%");
 		ResultSet resultSet = preparedStatement.executeQuery();
-		productList.clear();//Xóa danh sách trước khi hiện kết quả mới
-		while(resultSet.next()) {//Chỉ lấy dòng đầu tiên
+		productList.clear();
+		while(resultSet.next()) {//Hiển thị tất cả các dòng được tìm kiếm dựa theo tên
 			int id = resultSet.getInt("id");
 			String name = resultSet.getString("TenSP");
 			double price = resultSet.getDouble("GiaSP");
@@ -146,9 +153,12 @@ public class MainController {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	private Object deleteProduct() {
-		// TODO Auto-generated method stub
-		return null;
+	//Xóa sản phẩm
+	private void deleteProduct() throws SQLException {
+		String query = "DELETE FROM sanpham WHERE id = ?";
+		PreparedStatement preparedStatement = connection.prepareStatement(query);
+		preparedStatement.setInt(1, Integer.parseInt(idField.getText()));
+		preparedStatement.executeUpdate();
+		productList.clear();
 	}
 }
