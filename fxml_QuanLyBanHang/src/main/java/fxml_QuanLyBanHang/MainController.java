@@ -85,14 +85,21 @@ public class MainController {
 		deleteButton.setOnAction(e -> deleteProduct());
 		editButton.setOnAction(e -> editProduct());
 		updateButton.setOnAction(e -> updateProduct());
-		searchButton.setOnAction(e -> searchProduct());
+		searchButton.setOnAction(e -> {
+			try {
+				searchProduct();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 	}
 
 	private void connectToDatabase() throws SQLException {
 		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demobanhang","root", "");
 		System.out.println("Kết nối cơ sở dữ liệu thành công !");
 	}
-	
+	//Hiện danh sách sản phẩm
 	private void loadProduct() throws SQLException {
 		String query = "SELECT * FROM sanpham";
 		Statement statement = connection.createStatement();
@@ -105,7 +112,7 @@ public class MainController {
 			productList.add(new SanPham(id, name, price, description));
 		}
 	}
-	
+	//Thêm sản phẩm
 	private void addProduct() throws SQLException {
 		String query = "INSERT INTO sanpham(TenSP,GiaSP,MoTa) VALUES(?,?,?)";
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -114,10 +121,20 @@ public class MainController {
 		preparedStatement.setString(3, descriptionField.getText());
 		preparedStatement.executeUpdate();
 	}
-	
-	private Object searchProduct() {
-		// TODO Auto-generated method stub
-		return null;
+	//Tìm kiếm sản phẩm
+	private void searchProduct() throws SQLException {
+		String query = "SELECT * FROM sanpham WHERE TenSP LIKE ?";
+		PreparedStatement preparedStatement = connection.prepareStatement(query);
+		preparedStatement.setString(1, "%" + nameField.getText() + "%");
+		ResultSet resultSet = preparedStatement.executeQuery();
+		productList.clear();//Xóa danh sách trước khi hiện kết quả mới
+		while(resultSet.next()) {//Chỉ lấy dòng đầu tiên
+			int id = resultSet.getInt("id");
+			String name = resultSet.getString("TenSP");
+			double price = resultSet.getDouble("GiaSP");
+			String description = resultSet.getString("MoTa");
+			productList.add(new SanPham(id, name, price, description));
+		}
 	}
 
 	private Object updateProduct() {
