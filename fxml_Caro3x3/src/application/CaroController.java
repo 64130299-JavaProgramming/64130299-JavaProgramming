@@ -1,6 +1,8 @@
 package application;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 
 public class CaroController {
@@ -99,5 +101,14 @@ public class CaroController {
 			}
 		}
 		return true;
+	}
+	
+	//Hiển thị thông báo khi trò chơi kết thúc
+	private void showAlert(String message) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Game over");
+		alert.setHeaderText(null);
+		alert.setContentText(message);
+		alert.showAndWait();
 	}
 }
