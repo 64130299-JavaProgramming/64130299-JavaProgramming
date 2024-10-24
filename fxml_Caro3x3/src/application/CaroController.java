@@ -33,7 +33,7 @@ public class CaroController {
 				showAlert(board[row][col] + "win");
 				resetGame();
 			}
-			else if(isBoardFul()) {
+			else if(isBoardFull()) {
 				showAlert("It's a tie");
 				resetGame();
 			}
@@ -87,5 +87,17 @@ public class CaroController {
 	@FXML
 	private void onBtn9Click() {
 		handleButtonClick(btn9, 2, 2);
+	}
+	
+	//Hàm kiểm tra xem bàn cờ có đầy hay không
+	private boolean isBoardFull() {
+		for(int i = 0; i < 3 ; i++) {
+			for(int j = 0; j < 3 ; j++) {
+				if(board[i][j].isEmpty()) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 }
