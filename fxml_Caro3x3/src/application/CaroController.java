@@ -111,4 +111,23 @@ public class CaroController {
 		alert.setContentText(message);
 		alert.showAndWait();
 	}
+	
+	//Reset trò chơi
+	private void resetGame() {
+		isXTurn = true;
+		for(int i = 0 ; i < 3; i++) {
+			for(int j = 0; j < 3 ;j++) {
+				board[i][j] = "";
+			}
+		}
+		btn1.setText("");
+		btn2.setText("");
+		btn3.setText("");
+		btn4.setText("");
+		btn5.setText("");
+		btn6.setText("");
+		btn7.setText("");
+		btn8.setText("");
+		btn9.setText("");
+	}
 }
