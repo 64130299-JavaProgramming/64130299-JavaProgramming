@@ -20,4 +20,12 @@ public class CaroController {
 			}
 		}
 	}
+	
+	@FXML
+	private void handleButtonClick(Button btn,int row,int col) {
+		if(board[row][col].isEmpty()) {
+			//Cập nhật nút và bàn cờ
+			board[row][col] = isXTurn ? "X" : "O";
+		}
+	}
 }
