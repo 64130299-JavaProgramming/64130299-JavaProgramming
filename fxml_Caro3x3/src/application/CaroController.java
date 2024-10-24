@@ -26,6 +26,66 @@ public class CaroController {
 		if(board[row][col].isEmpty()) {
 			//Cập nhật nút và bàn cờ
 			board[row][col] = isXTurn ? "X" : "O";
+			btn.setText(board[row][col]);
+			
+			//Kiểm tra xem người chơi hiện tại có thắng không
+			if(checkWin()) {
+				showAlert(board[row][col] + "win");
+				resetGame();
+			}
+			else if(isBoardFul()) {
+				showAlert("It's a tie");
+				resetGame();
+			}
+			else {
+				//Đổi lượt người chơi
+				isXTurn = !isXTurn;
+			}
 		}
+	}
+	//Sự kiện khi người chơi nhấn vào các ô
+	@FXML
+	private void onBtn1Click() {
+		handleButtonClick(btn1, 0, 0);
+	}
+	
+	@FXML
+	private void onBtn2Click() {
+		handleButtonClick(btn2, 0, 1);
+	}
+	
+	@FXML
+	private void onBtn3Click() {
+		handleButtonClick(btn3, 0, 2);
+	}
+	
+	@FXML
+	private void onBtn4Click() {
+		handleButtonClick(btn4, 1, 0);
+	}
+	
+	@FXML
+	private void onBtn5Click() {
+		handleButtonClick(btn5, 1, 1);
+	}
+	
+	@FXML
+	private void onBtn6Click() {
+		handleButtonClick(btn6, 1, 2);
+	}
+	
+	@FXML
+	private void onBtn7Click() {
+		handleButtonClick(btn7, 2, 0);
+	}
+	
+	@FXML
+	private void onBtn8Click() {
+		handleButtonClick(btn8, 2, 1);
+	}
+	
+	@FXML
+	private void onBtn9Click() {
+		handleButtonClick(btn9, 2, 2);
 	}
 }
