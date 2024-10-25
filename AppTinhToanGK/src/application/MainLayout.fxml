@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane style="-fx-padding: 20; -fx-background-color: #f4f4f9;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<BorderPane style="-fx-padding: 20; -fx-background-color: #f4f4f9;"  xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
     <!-- Display Result -->
     <top>
         <TextField fx:id="display" editable="false" prefHeight="39.0" prefWidth="9.0" style="-fx-font-size: 24px; -fx-padding: 10; -fx-alignment: center-right; -fx-background-color: #e9e9ef; -fx-border-color: #ddd; -fx-border-width: 1px; -fx-text-fill: #333;" />
