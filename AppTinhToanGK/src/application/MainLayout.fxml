@@ -7,48 +7,48 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane style="-fx-padding: 20; -fx-background-color: #f4f4f9;"  xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<BorderPane style="-fx-padding: 20; -fx-background-color: #f4f4f9;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
     <!-- Display Result -->
     <top>
-        <TextField fx:id="display" editable="false" prefHeight="39.0" prefWidth="9.0" style="-fx-font-size: 24px; -fx-padding: 10; -fx-alignment: center-right; -fx-background-color: #e9e9ef; -fx-border-color: #ddd; -fx-border-width: 1px; -fx-text-fill: #333;" />
+        <TextField id="display" fx:id="display" editable="false" prefHeight="39.0" prefWidth="9.0" style="-fx-font-size: 24px; -fx-padding: 10; -fx-alignment: center-right; -fx-background-color: #e9e9ef; -fx-border-color: #ddd; -fx-border-width: 1px; -fx-text-fill: #333;" />
     </top>
 
     <center>
         <GridPane alignment="center" hgap="10" style="-fx-padding: 10 0 0 0;" vgap="10">
             
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 130; -fx-min-height: 60;" text="0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="." GridPane.rowIndex="3" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #4caf50; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="=" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Button onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 130; -fx-min-height: 60;" text="0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <Button onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="." GridPane.rowIndex="3" />
+            <Button fx:id="btnEquals" onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #4caf50; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="=" GridPane.columnIndex="3" GridPane.rowIndex="5" />
 
             
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="7" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="8" GridPane.columnIndex="1" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="9" GridPane.columnIndex="2" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #e57373; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="C" GridPane.columnIndex="3" />
+            <Button onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="7" />
+            <Button onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="8" GridPane.columnIndex="1" />
+            <Button onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="9" GridPane.columnIndex="2" />
+            <Button onAction="#clear" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #e57373; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="C" GridPane.columnIndex="3" />
 
             
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="6" GridPane.rowIndex="1" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #d49f9f; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="+" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="4" GridPane.rowIndex="1" />
+            <Button onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="btnAdd" onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #d49f9f; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="+" GridPane.columnIndex="3" GridPane.rowIndex="1" />
 
             
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="1" GridPane.rowIndex="2" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #d49f9f; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="1" GridPane.rowIndex="2" />
+            <Button onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #f0f0f5; -fx-text-fill: #444; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="btnSubtract" onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #d49f9f; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
 
             
             <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #8fa9e5; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="√" GridPane.columnIndex="0" GridPane.rowIndex="4" />
             <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #8fa9e5; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="sin" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #8fa9e5; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="cos" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #d49f9f; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="×" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button fx:id="btnMultiply" onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #d49f9f; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="×" GridPane.columnIndex="3" GridPane.rowIndex="3" />
 
             
             <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #8fa9e5; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="eˣ" GridPane.columnIndex="0" GridPane.rowIndex="5" />
             <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #8fa9e5; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="ln" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #8fa9e5; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="π" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Button style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #d49f9f; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Button fx:id="btnDivide" onAction="#handleButtonClick" style="-fx-font-size: 16px; -fx-padding: 15; -fx-background-color: #d49f9f; -fx-text-fill: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 60;" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="4" />
          <columnConstraints>
             <ColumnConstraints />
             <ColumnConstraints />
