@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.MainController">
+    <children>
+        <Label text="Chào mừng đến với Màn Hình Chính!" layoutX="100.0" layoutY="20.0" textAlignment="CENTER" />
+        <Button layoutX="100.0" layoutY="70.0" text="Đăng Xuất" onAction="#handleLogout" />
+    </children>
+</AnchorPane>
