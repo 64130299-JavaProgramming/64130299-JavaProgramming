@@ -9,7 +9,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CaroController">
    <children>
-      <GridPane layoutX="125.0" layoutY="75.0" maxHeight="350.0" maxWidth="350.0" prefHeight="350.0" prefWidth="350.0" style="-fx-border-color: black; -fx-border-width: 2px; -fx-border-style: solid;">
+      <GridPane layoutX="125.0" layoutY="75.0" maxHeight="350.0" maxWidth="350.0" prefHeight="350.0" prefWidth="350.0" style="-fx-border-color: white; -fx-border-width: 2px; -fx-border-style: solid; -fx-background-color: black;">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -21,41 +21,41 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btn1" mnemonicParsing="false" onAction="#onBtn1Click" prefHeight="141.0" prefWidth="162.0">
+            <Button fx:id="btn1" mnemonicParsing="false" onAction="#onBtn1Click" prefHeight="141.0" prefWidth="162.0" style="-fx-background-color: transparent; -fx-border-color: transparent white white transparent; -fx-border-width: 2px;" textFill="WHITE">
                <font>
-                  <Font size="40.0" />
+                  <Font size="50.0" />
                </font></Button>
-            <Button fx:id="btn2" mnemonicParsing="false" onAction="#onBtn2Click" prefHeight="129.0" prefWidth="167.0" GridPane.columnIndex="1">
+            <Button fx:id="btn2" mnemonicParsing="false" onAction="#onBtn2Click" prefHeight="129.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-border-color: transparent white white transparent; -fx-border-width: 2px;" textFill="WHITE" GridPane.columnIndex="1">
                <font>
-                  <Font size="40.0" />
+                  <Font size="50.0" />
                </font></Button>
-            <Button fx:id="btn3" mnemonicParsing="false" onAction="#onBtn3Click" prefHeight="122.0" prefWidth="138.0" GridPane.columnIndex="2">
+            <Button fx:id="btn3" mnemonicParsing="false" onAction="#onBtn3Click" prefHeight="122.0" prefWidth="138.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent white transparent; -fx-border-width: 2px;" textFill="WHITE" GridPane.columnIndex="2">
                <font>
-                  <Font size="40.0" />
+                  <Font size="50.0" />
                </font></Button>
-            <Button fx:id="btn4" mnemonicParsing="false" onAction="#onBtn4Click" prefHeight="138.0" prefWidth="178.0" GridPane.rowIndex="1">
+            <Button fx:id="btn4" mnemonicParsing="false" onAction="#onBtn4Click" prefHeight="138.0" prefWidth="178.0" style="-fx-background-color: transparent; -fx-border-color: transparent white white transparent; -fx-border-width: 2px;" textFill="WHITE" GridPane.rowIndex="1">
                <font>
-                  <Font size="40.0" />
+                  <Font size="50.0" />
                </font></Button>
-            <Button fx:id="btn5" mnemonicParsing="false" onAction="#onBtn5Click" prefHeight="127.0" prefWidth="158.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="btn5" mnemonicParsing="false" onAction="#onBtn5Click" prefHeight="127.0" prefWidth="158.0" style="-fx-background-color: transparent; -fx-border-color: transparent white white transparent; -fx-border-width: 2px;" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
-                  <Font size="40.0" />
+                  <Font size="50.0" />
                </font></Button>
-            <Button fx:id="btn6" mnemonicParsing="false" onAction="#onBtn6Click" prefHeight="134.0" prefWidth="134.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="btn6" mnemonicParsing="false" onAction="#onBtn6Click" prefHeight="134.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent white transparent; -fx-border-width: 2px;" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
-                  <Font size="40.0" />
+                  <Font size="50.0" />
                </font></Button>
-            <Button fx:id="btn7" mnemonicParsing="false" onAction="#onBtn7Click" prefHeight="112.0" prefWidth="114.0" GridPane.rowIndex="2">
+            <Button fx:id="btn7" mnemonicParsing="false" onAction="#onBtn7Click" prefHeight="112.0" prefWidth="114.0" style="-fx-background-color: transparent; -fx-border-color: transparent white transparent transparent; -fx-border-width: 2px;" textFill="WHITE" GridPane.rowIndex="2">
                <font>
-                  <Font size="40.0" />
+                  <Font size="50.0" />
                </font></Button>
-            <Button fx:id="btn8" mnemonicParsing="false" onAction="#onBtn8Click" prefHeight="112.0" prefWidth="116.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="btn8" mnemonicParsing="false" onAction="#onBtn8Click" prefHeight="112.0" prefWidth="116.0" style="-fx-background-color: transparent; -fx-border-color: transparent white transparent transparent; -fx-border-width: 2px;" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
-                  <Font size="40.0" />
+                  <Font size="50.0" />
                </font></Button>
-            <Button fx:id="btn9" mnemonicParsing="false" onAction="#onBtn9Click" prefHeight="112.0" prefWidth="122.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button fx:id="btn9" mnemonicParsing="false" onAction="#onBtn9Click" prefHeight="112.0" prefWidth="122.0" style="-fx-background-color: transparent;" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
-                  <Font size="40.0" />
+                  <Font size="50.0" />
                </font></Button>
          </children>
       </GridPane>

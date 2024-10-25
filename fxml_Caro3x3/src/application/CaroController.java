@@ -32,7 +32,7 @@ public class CaroController {
 
 			// Kiểm tra xem người chơi hiện tại có thắng không
 			if (checkWin()) {
-				showAlert(board[row][col] + "win");
+				showAlert(board[row][col] + " win");
 				resetGame();
 			} else if (isBoardFull()) {
 				showAlert("It's a tie");
