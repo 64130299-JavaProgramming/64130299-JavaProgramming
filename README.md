@@ -11,6 +11,9 @@
   - Cơ sở dữ liệu: MongoDB, MySQL
 - **🛠️ Kinh nghiệm làm việc**: Thực tập 3 tháng tại WidoSoft.
   ### Bài tập Java
-  ## Bài tập Caro 3x3
+  ## Caro 3x3
   <img src="fxml_Caro3x3/Screenshot 2024-10-25 113809.png" width="600" alt="Giao diện caro 3x3 fxml" />
+  ## Quản lý bán hàng
+  <img src="fx_QuanLyBanhang/Screenshot 2024-10-25 130315.png" width="600" alt="Giao diện quản lý bán hàng fxml"/>
+  
 
