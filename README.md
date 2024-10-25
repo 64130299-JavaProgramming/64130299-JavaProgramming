@@ -10,4 +10,4 @@
   - Framework: Node.js, React, Express
   - Cơ sở dữ liệu: MongoDB, MySQL
 - **🛠️ Kinh nghiệm làm việc**: Thực tập 3 tháng tại WidoSoft.
-fxml_Caro3x3/Screenshot 2024-10-25 113809.png
+'fxml_Caro3x3/Screenshot 2024-10-25 113809.png'
