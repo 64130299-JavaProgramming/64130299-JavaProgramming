@@ -19,7 +19,7 @@
     <Polygon fill="TRANSPARENT" layoutX="-1.0" layoutY="7.0" points="150.39999389648438, 190.80001831054688, 123.39998626708984, 160.0, 179.39999389648438, 160.0" stroke="RED" strokeWidth="3.0" />
 
     <!-- Thân (Hình tròn lớn) -->
-    <Circle centerX="150" centerY="300" fill="TRANSPARENT" radius="80" stroke="BLACK" strokeWidth="3.0" />
+    <Circle centerX="150" centerY="300" fill="TRANSPARENT" layoutY="17.0" radius="80.0" stroke="BLACK" strokeWidth="3.0" />
 
     <!-- Chân trái (Hình tròn nhỏ) -->
     <Circle centerX="100" centerY="400" fill="TRANSPARENT" layoutX="-1.0" layoutY="-31.0" radius="30" stroke="BLACK" strokeWidth="3.0" />
