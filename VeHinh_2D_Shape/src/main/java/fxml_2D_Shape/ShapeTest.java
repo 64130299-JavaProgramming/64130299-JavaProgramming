@@ -25,63 +25,63 @@ public class ShapeTest extends Application {
 
         // Vẽ Tam giác lớn (Phần đầu)
         gc.beginPath();
-        gc.moveTo(150, 50);
-        gc.lineTo(29.8, 200);
-        gc.lineTo(273.8, 200);
+        gc.moveTo(150, 70);   // Di chuyển đầu ra vị trí hợp lý
+        gc.lineTo(50, 200);   // Di chuyển về phía trái
+        gc.lineTo(250, 200);  // Di chuyển về phía phải
         gc.closePath();
         gc.stroke();
 
         // Vẽ Tai trái (Tam giác nhỏ)
         gc.beginPath();
-        gc.moveTo(108.8, 86.8);
-        gc.lineTo(90, 40);
-        gc.lineTo(132, 56.8);
+        gc.moveTo(110, 100);  // Di chuyển tai trái gần đầu hơn
+        gc.lineTo(90, 50);    // Di chuyển tai trái lên gần đầu
+        gc.lineTo(130, 70);   // Di chuyển tai trái xuống dưới một chút
         gc.closePath();
         gc.stroke();
 
         // Vẽ Tai phải (Tam giác nhỏ)
         gc.beginPath();
-        gc.moveTo(194, 96.8);
-        gc.lineTo(213.2, 48.7);
-        gc.lineTo(170, 70);
+        gc.moveTo(190, 100);  // Di chuyển tai phải gần đầu hơn
+        gc.lineTo(210, 50);   // Di chuyển tai phải lên gần đầu
+        gc.lineTo(170, 70);   // Di chuyển tai phải xuống dưới một chút
         gc.closePath();
         gc.stroke();
 
         // Vẽ Mũi (Tam giác nhỏ màu đỏ)
         gc.setStroke(Color.RED);
         gc.beginPath();
-        gc.moveTo(150.4, 190.8);
-        gc.lineTo(123.4, 160);
-        gc.lineTo(179.4, 160);
+        gc.moveTo(150, 180);  // Di chuyển mũi xuống gần phía dưới đầu
+        gc.lineTo(125, 150);  // Vị trí bên trái mũi
+        gc.lineTo(175, 150);  // Vị trí bên phải mũi
         gc.closePath();
         gc.stroke();
 
         // Vẽ Thân (Hình tròn lớn)
         gc.setStroke(Color.BLACK);
         gc.setFill(Color.TRANSPARENT);
-        gc.strokeOval(70, 220, 160, 160); // Vẽ hình tròn
+        gc.strokeOval(85, 220, 130, 130);  // Di chuyển thân về phía dưới đầu
 
         // Vẽ Chân trái (Hình tròn nhỏ)
-        gc.strokeOval(70, 370, 60, 60);
+        gc.strokeOval(85, 360, 60, 60);  // Chân trái gần thân hơn
 
         // Vẽ Chân phải (Hình tròn nhỏ)
-        gc.strokeOval(170, 370, 60, 60);
+        gc.strokeOval(155, 360, 60, 60);  // Chân phải gần thân hơn
 
         // Vẽ Chi tiết chân trái (Hai hình cung màu đỏ tạo hiệu ứng ngắt quãng nằm ngang)
         gc.setStroke(Color.RED);
         gc.beginPath();
-        gc.arc(100, 400, 15, 15, 135, 90);
+        gc.arc(115, 390, 15, 15, 135, 90);  // Vị trí chi tiết chân trái
         gc.stroke();
         gc.beginPath();
-        gc.arc(100, 400, 15, 15, 315, 90);
+        gc.arc(115, 390, 15, 15, 315, 90);  // Vị trí chi tiết chân trái
         gc.stroke();
 
         // Vẽ Chi tiết chân phải (Hai hình cung màu đỏ tạo hiệu ứng ngắt quãng nằm ngang)
         gc.beginPath();
-        gc.arc(200, 400, 15, 15, 135, 90);
+        gc.arc(185, 390, 15, 15, 135, 90);  // Vị trí chi tiết chân phải
         gc.stroke();
         gc.beginPath();
-        gc.arc(200, 400, 15, 15, 315, 90);
+        gc.arc(185, 390, 15, 15, 315, 90);  // Vị trí chi tiết chân phải
         gc.stroke();
 
         // Đưa Canvas vào một Group và hiển thị trên Stage
