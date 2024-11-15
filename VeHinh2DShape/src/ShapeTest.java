@@ -1,15 +1,14 @@
-package fxml_2D_Shape;
+import java.awt.Canvas;
+import java.awt.Color;
+
+import javax.swing.GroupLayout.Group;
 
 import javafx.application.Application;
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.scene.shape.StrokeLineJoin;
 
-public class ShapeTest extends Application {
+public class ShapeDrawingApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
@@ -18,7 +17,7 @@ public class ShapeTest extends Application {
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
         // Thiết lập Stroke Miter Limit (giới hạn miter)
-        gc.setLineJoin(StrokeLineJoin.MITER);
+        gc.setLineJoin(javafx.scene.paint.StrokeLineJoin.MITER);
         gc.setLineWidth(3);
         gc.setStroke(Color.BLACK);
         gc.setMiterLimit(5); // Đặt giới hạn miter
