@@ -1,4 +1,4 @@
-package controller;
+package thigiuaki_64130299;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -15,7 +15,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class LoginController {
+public class DangNhapController {
 
     @FXML
     private TextField usernameField;
@@ -39,7 +39,7 @@ public class LoginController {
     private boolean validateLogin(String username, String password) {
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/danhsachhocsinh", "root", "");
-            String query = "SELECT * FROM user WHERE username = ? AND password = ?";
+            String query = "SELECT * FROM users WHERE username = ? AND password = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
@@ -54,7 +54,7 @@ public class LoginController {
 
     private void loadMainScreen() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("main_screen.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ManHinhChinh.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) usernameField.getScene().getWindow();

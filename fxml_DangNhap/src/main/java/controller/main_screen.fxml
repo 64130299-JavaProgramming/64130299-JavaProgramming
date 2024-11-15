@@ -4,34 +4,35 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="495.0" prefWidth="737.0" style="-fx-background-color: #f0f0f0;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23" fx:controller="controller.MainController">
+<AnchorPane style="-fx-background-color: #e9ecef;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23" fx:controller="controller.MainController">
     <children>
-        <!-- Tiêu đề -->
-        <VBox layoutX="153.0" layoutY="14.0" spacing="10" style="-fx-alignment: center;">
-            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Chào mừng đến với Màn Hình Chính!" />
-            <Button alignment="CENTER_RIGHT" onAction="#handleLogout" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 20; -fx-cursor: hand; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);" text="Đăng Xuất" />
-        </VBox>
+        <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #007bff; -fx-padding: 20;" text="Danh Sách Học Sinh" />
         
-        <!-- Bảng Sản Phẩm -->
-        <TableView fx:id="productTable" layoutX="13.0" layoutY="124.0" prefHeight="300.0" prefWidth="700.0" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-width: 1px; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 1);">
+        <TableView fx:id="studentTable" layoutY="70" prefHeight="200" prefWidth="600" style="-fx-background-color: white; -fx-border-color: #007bff; -fx-border-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);">
             <columns>
-                <TableColumn fx:id="idColumn" prefWidth="70" style="-fx-text-fill: #333;" text="ID" />
-                <TableColumn fx:id="nameColumn" prefWidth="200" style="-fx-text-fill: #333;" text="Tên Sản Phẩm" />
-                <TableColumn fx:id="priceColumn" prefWidth="100" style="-fx-text-fill: #333;" text="Giá" />
-                <TableColumn fx:id="quantityColumn" prefWidth="94.4000244140625" style="-fx-text-fill: #333;" text="Số Lượng" />
-                <TableColumn fx:id="descriptionColumn" prefWidth="236.0" style="-fx-text-fill: #333;" text="Mô Tả" />
+                <TableColumn fx:id="idColumn" text="ID" />
+                <TableColumn fx:id="nameColumn" text="Tên" />
+                <TableColumn fx:id="ageColumn" text="Tuổi" />
+                <TableColumn fx:id="classColumn" text="Lớp" />
             </columns>
         </TableView>
 
-        <!-- Thanh điều khiển dưới cùng -->
-        <HBox alignment="CENTER" layoutX="146.0" layoutY="433.0" spacing="20" style="-fx-background-color: #e9ecef; -fx-padding: 10; -fx-background-radius: 5;">
-            <Button onAction="#handleAddProduct" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 16; -fx-cursor: hand; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);" text="Thêm Sản Phẩm" />
-            <Button onAction="#handleEditProduct" style="-fx-background-color: #ffc107; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 16; -fx-cursor: hand; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);" text="Sửa Sản Phẩm" />
-            <Button onAction="#handleDeleteProduct" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 16; -fx-cursor: hand; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);" text="Xóa Sản Phẩm" />
+        <HBox alignment="CENTER" layoutX="132.0" layoutY="456.0" spacing="10">
+            <Button onAction="#handleAdd" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-padding: 10; -fx-background-radius: 5; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 1); -fx-font-size: 14px;" text="Thêm Học Sinh" />
+            <Button onAction="#handleEdit" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-padding: 10; -fx-background-radius: 5; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0,  1); -fx-font-size: 14px;" text="Sửa Học Sinh" />
+            <Button onAction="#handleDelete" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-padding: 10; -fx-background-radius: 5; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 1); -fx-font-size: 14px;" text="Xóa Học Sinh" />
         </HBox>
+         <TextField fx:id="idField" layoutX="240.0" layoutY="288.0" promptText="Nhập ID" />
+         <TextField fx:id="nameField" layoutX="240.0" layoutY="325.0" promptText="Nhập tên" />
+         <TextField fx:id="ageField" layoutX="240.0" layoutY="364.0" promptText="Nhập tuổi" />
+         <TextField fx:id="addressField" layoutX="240.0" layoutY="399.0" promptText="Nhập địa chỉ" />
+         <Label layoutX="184.0" layoutY="403.0" text="Địa Chỉ:" />
+         <Label layoutX="197.0" layoutY="289.0" prefHeight="23.0" prefWidth="14.0" text="ID:" />
+         <Label layoutX="191.0" layoutY="368.0" text="Tuổi:" />
+      <Label layoutX="191.0" layoutY="329.0" text="Tên" />
     </children>
 </AnchorPane>

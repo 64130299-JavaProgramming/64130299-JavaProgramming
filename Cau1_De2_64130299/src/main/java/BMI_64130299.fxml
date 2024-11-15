@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController_64130299">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <!-- Tính BMI -->
+    <Label text="Tính chỉ số BMI"/>
+    <HBox spacing="10">
+        <Label text="Cân nặng (kg):"/>
+        <TextField fx:id="truongCanNang"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Chiều cao (m):"/>
+        <TextField fx:id="truongChieuCao"/>
+    </HBox>
+    <Button text="Tính BMI" onAction="#tinhBMI"/>
+
+    <!-- Chuyển đổi Byte -> bit -->
+    <Label text="Chuyển đổi Byte sang Bit" />
+    <HBox spacing="10">
+        <Label text="Số Byte:"/>
+        <TextField fx:id="truongByte"/>
+    </HBox>
+    <Button text="Chuyển đổi" onAction="#chuyenDoiSangBit"/>
+
+    <!-- Hiển thị kết quả -->
+    <Label text="Kết quả:"/>
+    <TextArea fx:id="truongKetQua" editable="false" prefHeight="100"/>
+
+    <!-- Hiển thị lịch sử -->
+    <Label text="Lịch sử tính toán:"/>
+    <TextArea fx:id="truongLichSu" editable="false" prefHeight="150"/>
+</VBox>

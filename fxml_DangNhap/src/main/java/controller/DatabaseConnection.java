@@ -8,7 +8,7 @@ public class DatabaseConnection {
     public Connection getConnection() {
         Connection connection = null;
         try {
-            String url = "jdbc:mysql://localhost:3306/danhsachtaikhoan";
+            String url = "jdbc:mysql://localhost:3306/danhsachhocsinh";
             String user = "root";
             String password = "";
             connection = DriverManager.getConnection(url, user, password);

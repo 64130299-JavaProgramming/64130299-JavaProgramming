@@ -79,7 +79,42 @@ public class MainController {
         }
         lastOperator = operator;
     }
+    
+    //Xử lý các hàm toán học khác
+    @FXML
+    private void handleMathFunction(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        String buttonText = button.getText();
+        
+        double currentNumber = Double.parseDouble(currentInput.toString());
 
+        switch (buttonText) {
+            case "√":
+                result = Math.sqrt(currentNumber);
+                break;
+            case "sin":
+                result = Math.sin(Math.toRadians(currentNumber));
+                break;
+            case "cos":
+                result = Math.cos(Math.toRadians(currentNumber));
+                break;
+            case "eˣ":
+                result = Math.exp(currentNumber);
+                break;
+            case "ln":
+                result = Math.log(currentNumber);
+                break;
+            case "π":
+                currentInput.setLength(0);
+                currentInput.append(Math.PI);
+                display.setText(currentInput.toString());
+                return;
+        }
+
+        display.setText(String.valueOf(result));
+        currentInput.setLength(0);
+    }
+    
     // Xóa display
     @FXML
     private void clear() {
@@ -87,5 +122,10 @@ public class MainController {
         display.clear();
         result = 0;
         lastOperator = "=";
+    }
+    
+    @FXML
+    public void handlePi(javafx.event.ActionEvent event) {
+        display.setText(String.valueOf(Math.PI)); // Hiển thị giá trị của π
     }
 }

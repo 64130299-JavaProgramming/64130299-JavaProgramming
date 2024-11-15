@@ -1,122 +1,160 @@
 package controller;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-
+import javafx.fxml.FXML;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.fxml.FXML;
-import javafx.stage.Stage;
-import javafx.scene.Parent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.Node;
+
+import java.sql.*;
 
 public class MainController {
-	@FXML
-    private TableView<Product> productTable;
-    @FXML
-    private TableColumn<Product, Integer> idColumn;
-    @FXML
-    private TableColumn<Product, String> nameColumn;
-    @FXML
-    private TableColumn<Product, Double> priceColumn;
-    @FXML
-    private TableColumn<Product, Integer> quantityColumn;
+    @FXML private TableView<HocSinh> studentTable;
+    @FXML private TableColumn<HocSinh, Integer> idColumn;
+    @FXML private TableColumn<HocSinh, String> nameColumn;
+    @FXML private TableColumn<HocSinh, Integer> ageColumn;
+    @FXML private TableColumn<HocSinh, String> classColumn;
     
-    @FXML
-    private TableColumn<Product, String> descriptionColumn;
+    @FXML private TextField idField;
+    @FXML private TextField nameField;
+    @FXML private TextField ageField;
+    @FXML private TextField addressField;
 
-    private ObservableList<Product> productList = FXCollections.observableArrayList();
-    
+    private ObservableList<HocSinh> studentList = FXCollections.observableArrayList();
+
     @FXML
     public void initialize() {
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description")); 
+        idColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getId()).asObject());
+        nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
+        ageColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getAge()).asObject());
+        classColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClassName()));
 
-        loadProductData();
-        productTable.setItems(productList);
+        loadStudents();
     }
-    
-    private void loadProductData() {
-        DatabaseConnection dbConnection = new DatabaseConnection();
-        Connection connection = dbConnection.getConnection();
 
-        String query = "SELECT * FROM products"; // Thay 'products' bằng tên bảng của bạn
-        try {
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(query);
+    private void loadStudents() {
+        String query = "SELECT * FROM hocsinh";
+        try (Connection conn = connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
 
-            while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-                double price = resultSet.getDouble("price");
-                int quantity = resultSet.getInt("quantity");
-                String description = resultSet.getString("description"); // Lấy mô tả
-
-                Product product = new Product(id, name, price, quantity, description); // Thêm mô tả vào Product
-                productList.add(product);
+            studentList.clear();
+            while (rs.next()) {
+                studentList.add(new HocSinh(rs.getInt("id"), rs.getString("ten"), rs.getInt("tuoi"), rs.getString("diachi")));
             }
-        } catch (Exception e) {
+            studentTable.setItems(studentList);
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-    
- // Hiển thị thông báo khi nhấn nút "Thêm Sản Phẩm"
-    @FXML
-    private void handleAddProduct() {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Thêm Sản Phẩm");
-        alert.setHeaderText(null);
-        alert.setContentText("Chức năng Thêm Sản Phẩm đã được chọn.");
-        alert.showAndWait();
-    }
-    
- // Hiển thị thông báo khi nhấn nút "Xóa Sản Phẩm"
-    @FXML
-    private void handleDeleteProduct() {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Xóa Sản Phẩm");
-        alert.setHeaderText(null);
-        alert.setContentText("Chức năng Xóa Sản Phẩm đã được chọn.");
-        alert.showAndWait();
-    }
 
-    // Hiển thị thông báo khi nhấn nút "Sửa Sản Phẩm"
     @FXML
-    private void handleEditProduct() {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Sửa Sản Phẩm");
-        alert.setHeaderText(null);
-        alert.setContentText("Chức năng Sửa Sản Phẩm đã được chọn.");
-        alert.showAndWait();
-    }
-
-    // Xử lý sự kiện đăng xuất
-    @FXML
-    private void handleLogout(ActionEvent event) {
+    private void handleAdd() {
         try {
-            // Tải giao diện FXML cho form đăng nhập
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("form_login.fxml"));
-            Parent root = loader.load();
-            // Lấy stage hiện tại và thay đổi scene về màn hình đăng nhập
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Đăng Nhập");
-            stage.show();
-        } catch (Exception e) {
+            String query = "INSERT INTO hocsinh (ten, tuoi, diachi) VALUES (?, ?, ?)";
+            try (Connection conn = connect();
+                 PreparedStatement pstmt = conn.prepareStatement(query)) {
+                pstmt.setString(1, nameField.getText());
+                pstmt.setInt(2, Integer.parseInt(ageField.getText()));
+                pstmt.setString(3, addressField.getText());
+
+                pstmt.executeUpdate();
+                loadStudents();
+                clearFields();
+                showAlert("Thêm học sinh thành công!");
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
+            showAlert("Lỗi khi thêm học sinh!");
+        } catch (NumberFormatException e) {
+            showAlert("Vui lòng nhập số hợp lệ cho tuổi!");
+        }
+    }
+
+    @FXML
+    private void handleEdit() {
+        if (studentTable.getSelectionModel().getSelectedItem() == null) {
+            showAlert("Vui lòng chọn học sinh để sửa!");
+            return;
+        }
+
+        try {
+            String query = "UPDATE hocsinh SET ten = ?, tuoi = ?, diachi = ? WHERE id = ?";
+            try (Connection conn = connect();
+                 PreparedStatement pstmt = conn.prepareStatement(query)) {
+                HocSinh selectedStudent = studentTable.getSelectionModel().getSelectedItem();
+                pstmt.setString(1, nameField.getText());
+                pstmt.setInt(2, Integer.parseInt(ageField.getText()));
+                pstmt.setString(3, addressField.getText());
+                pstmt.setInt(4, selectedStudent.getId());
+
+                pstmt.executeUpdate();
+                loadStudents();
+                clearFields();
+                showAlert("Sửa thông tin học sinh thành công!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert("Lỗi khi sửa thông tin học sinh!");
+        } catch (NumberFormatException e) {
+            showAlert("Vui lòng nhập số hợp lệ cho tuổi!");
+        }
+    }
+
+    @FXML
+    private void handleDelete() {
+        if (studentTable.getSelectionModel().getSelectedItem() == null) {
+            showAlert("Vui lòng chọn học sinh để xóa!");
+            return;
+        }
+
+        try {
+            String query = "DELETE FROM hocsinh WHERE id = ?";
+            try (Connection conn = connect();
+                 PreparedStatement pstmt = conn.prepareStatement(query)) {
+                HocSinh selectedStudent = studentTable.getSelectionModel().getSelectedItem();
+                pstmt.setInt(1, selectedStudent.getId());
+
+                pstmt.executeUpdate();
+                loadStudents();
+                clearFields();
+                showAlert("Xóa học sinh thành công!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert("Lỗi khi xóa học sinh!");
+        }
+    }
+
+    private void clearFields() {
+        idField.clear();
+        nameField.clear();
+        ageField.clear();
+        addressField.clear();
+    }
+
+    private void showAlert(String message) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private Connection connect() {
+        String url = "jdbc:mysql://localhost:3306/danhsachhocsinh";
+        String user = "root";  // Change this to your MySQL username
+        String password = ""; // Change this to your MySQL password
+        try {
+            return DriverManager.getConnection(url, user, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
