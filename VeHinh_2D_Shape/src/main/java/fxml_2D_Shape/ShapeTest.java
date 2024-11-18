@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -19,6 +20,18 @@ public class ShapeTest extends Application {
         // Tạo Canvas và GraphicsContext
         Canvas canvas = new Canvas(300, 500);
         GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        // Label hiển thị tọa độ
+        Label coordinatesLabel = new Label("Tọa độ: (0, 0)");
+        coordinatesLabel.setFont(new Font("Arial", 14));
+        coordinatesLabel.setStyle("-fx-text-fill: #333;");
+
+        // Xử lý sự kiện di chuyển chuột trên Canvas
+        canvas.setOnMouseMoved(event -> {
+            double x = event.getX();
+            double y = event.getY();
+            coordinatesLabel.setText(String.format("Tọa độ: (%.1f, %.1f)", x, y));
+        });
 
         // Tạo Button để vẽ hình
         Button drawButton = new Button("Vẽ Hình");
@@ -34,14 +47,14 @@ public class ShapeTest extends Application {
             "-fx-background-radius: 20;"
         );
 
-        // Tạo VBox để căn chỉnh nút và canvas
+        // Tạo VBox để căn chỉnh các phần tử
         VBox root = new VBox(10); // Khoảng cách giữa các phần tử là 10px
         root.setAlignment(Pos.CENTER); // Căn giữa các phần tử trong VBox
-        root.getChildren().addAll(canvas, drawButton); // Thêm Canvas trước và Button dưới
+        root.getChildren().addAll(canvas, coordinatesLabel, drawButton); // Thêm Canvas, Label, và Button
 
         // Thiết lập Scene và Stage
         Scene scene = new Scene(root, 300, 550);
-        primaryStage.setTitle("Shape Drawing with Canvas and Button");
+        primaryStage.setTitle("Shape Drawing with Coordinates Display");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
