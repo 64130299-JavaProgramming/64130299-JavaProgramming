@@ -16,5 +16,8 @@
   
   ## Quản lý bán hàng
   <img src="fx_QuanLyBanhang/Screenshot 2024-10-25 130315.png" width="600" alt="Giao diện quản lý bán hàng fxml"/>
-  
+
+  ## Vẽ hình 2D Shape
+    <img src="VeHinh_2D_Shape/Screenshot 2024-11-18 212314.png" width="300" alt="Giao diện 2d shape 1"/>
+    <img src="VeHinh_2D_Shape/Screenshot 2024-11-18 212322.png" width="300" alt="Giao diện 2d shape 1"/>
 
