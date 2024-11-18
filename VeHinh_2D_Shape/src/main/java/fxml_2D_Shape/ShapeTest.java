@@ -1,11 +1,14 @@
 package fxml_2D_Shape;
 
 import javafx.application.Application;
-import javafx.scene.Group;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.shape.StrokeLineJoin;
 
@@ -13,9 +16,40 @@ public class ShapeTest extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Tạo đối tượng Canvas
+        // Tạo Canvas và GraphicsContext
         Canvas canvas = new Canvas(300, 500);
         GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        // Tạo Button để vẽ hình
+        Button drawButton = new Button("Vẽ Hình");
+        drawButton.setOnAction(event -> drawShapes(gc));
+
+        // Thiết lập giao diện nút
+        drawButton.setFont(new Font("Arial", 16));
+        drawButton.setStyle(
+            "-fx-background-color: linear-gradient(to right, #6a11cb, #2575fc);" +
+            "-fx-text-fill: white;" +
+            "-fx-padding: 10 20;" +
+            "-fx-border-radius: 20;" +
+            "-fx-background-radius: 20;"
+        );
+
+        // Tạo VBox để căn chỉnh nút và canvas
+        VBox root = new VBox(10); // Khoảng cách giữa các phần tử là 10px
+        root.setAlignment(Pos.CENTER); // Căn giữa các phần tử trong VBox
+        root.getChildren().addAll(canvas, drawButton); // Thêm Canvas trước và Button dưới
+
+        // Thiết lập Scene và Stage
+        Scene scene = new Scene(root, 300, 550);
+        primaryStage.setTitle("Shape Drawing with Canvas and Button");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    // Phương thức vẽ hình
+    private void drawShapes(GraphicsContext gc) {
+        // Xóa Canvas trước khi vẽ
+        gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
 
         // Thiết lập Stroke Miter Limit (giới hạn miter)
         gc.setLineJoin(StrokeLineJoin.MITER);
@@ -83,15 +117,6 @@ public class ShapeTest extends Application {
         gc.beginPath();
         gc.arc(185, 390, 15, 15, 315, 90);  // Vị trí chi tiết chân phải
         gc.stroke();
-
-        // Đưa Canvas vào một Group và hiển thị trên Stage
-        Group root = new Group();
-        root.getChildren().add(canvas);
-
-        Scene scene = new Scene(root, 300, 500);
-        primaryStage.setTitle("Shape Drawing with Canvas and Stroke Miter Limit");
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
 
     public static void main(String[] args) {
