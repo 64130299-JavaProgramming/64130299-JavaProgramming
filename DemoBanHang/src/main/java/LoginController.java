@@ -7,7 +7,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 
-import Utils.DBUtils;
 import BLL.NhanVienBLL;
 
 public class LoginController {

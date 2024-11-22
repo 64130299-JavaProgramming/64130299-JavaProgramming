@@ -4,7 +4,7 @@ import DAL.NhanVienDAL;
 import DTO.NhanVien;
 
 public class NhanVienBLL {
-	NhanVienDAL nvDAL;
+	NhanVienDAL nvDAL = new NhanVienDAL();
 	public boolean ThemMoi(NhanVien nv) {
 		//Các xử lý khác ở đây
 		boolean kq = nvDAL.addNew(nv);
