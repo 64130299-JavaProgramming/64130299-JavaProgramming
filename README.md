@@ -20,4 +20,7 @@
   ## Vẽ hình 2D Shape
     <img src="VeHinh_2D_Shape/Screenshot 2024-11-18 212314.png" width="300" alt="Giao diện 2d shape 1"/>
     <img src="VeHinh_2D_Shape/Screenshot 2024-11-18 212322.png" width="300" alt="Giao diện 2d shape 1"/>
-
+  ## Ứng dụng đăng nhập(Mô hình 3 lớp)
+    <img src="https://github.com/datx24/64130299-JavaProgramming/blob/main/DemoBanHang/Screenshot%202024-11-22%20154155.png" width="300" alt="Giao diện đăng nhập"/>
+    <img src="https://github.com/datx24/64130299-JavaProgramming/blob/main/DemoBanHang/Screenshot%202024-11-22%20154216.png" width="300" alt="Đăng nhập thành công"/>
+    <img src="https://github.com/datx24/64130299-JavaProgramming/blob/main/DemoBanHang/Screenshot%202024-11-22%20154229.png" width="300" alt="Đăng nhập thất bại"/>
