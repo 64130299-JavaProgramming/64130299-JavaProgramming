@@ -7,7 +7,7 @@
 
 ## 💻 **Kỹ năng lập trình**
 - **Ngôn ngữ**: JavaScript, Python, C++, Java, Dart, C#  
-- **Framework**: Node.js, React, Express  
+- **Framework**: Node.js, React
 - **Cơ sở dữ liệu**: Firebase, MySQL  
 
 ## 🛠️ **Kinh nghiệm làm việc**
