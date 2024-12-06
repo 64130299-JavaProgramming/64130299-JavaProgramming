@@ -87,22 +87,22 @@
                            <children>
                               <VBox spacing="10.0">
                                  <children>
-                                    <Button id="btnAnswer1" fx:id="btnAnswer1" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="A">
+                                    <Button id="btnAnswer1" fx:id="btnAnswer1" mnemonicParsing="false" onAction="#handleAnswerButtonClick" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="A">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
                                     </Button>
-                                    <Button id="btnAnswer2" fx:id="btnAnswer2" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="B">
+                                    <Button id="btnAnswer2" fx:id="btnAnswer2" mnemonicParsing="false" onAction="#handleAnswerButtonClick" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="B">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
                                     </Button>
-                                    <Button id="btnAnswer3" fx:id="btnAnswer3" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="C">
+                                    <Button id="btnAnswer3" fx:id="btnAnswer3" mnemonicParsing="false" onAction="#handleAnswerButtonClick" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="C">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
                                     </Button>
-                                    <Button id="btnAnswer4" fx:id="btnAnswer4" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="D">
+                                    <Button id="btnAnswer4" fx:id="btnAnswer4" mnemonicParsing="false" onAction="#handleAnswerButtonClick" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="D">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
