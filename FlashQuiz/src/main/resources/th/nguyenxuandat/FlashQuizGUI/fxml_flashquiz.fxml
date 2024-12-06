@@ -26,43 +26,43 @@
                         </Label>
                         <VBox alignment="CENTER" layoutX="18.0" layoutY="67.0" prefHeight="463.0" prefWidth="164.0" spacing="10.0">
                            <children>
-                              <Button fx:id="btnQuestion10" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 10">
+                              <Button fx:id="btnQuestion10" mnemonicParsing="false" onAction="#handleButtonQuestionClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 10">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
-                              <Button fx:id="btnQuestion9" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 9">
+                              <Button fx:id="btnQuestion9" mnemonicParsing="false" onAction="#handleButtonQuestionClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 9">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
-                              <Button fx:id="btnQuestion8" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 8">
+                              <Button fx:id="btnQuestion8" mnemonicParsing="false" onAction="#handleButtonQuestionClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 8">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
-                              <Button fx:id="btnQuestion7" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 7">
+                              <Button fx:id="btnQuestion7" mnemonicParsing="false" onAction="#handleButtonQuestionClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 7">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
-                              <Button fx:id="btnQuestion6" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 6">
+                              <Button fx:id="btnQuestion6" mnemonicParsing="false" onAction="#handleButtonQuestionClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 6">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
-                              <Button fx:id="btnQuestion5" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 5">
+                              <Button fx:id="btnQuestion5" mnemonicParsing="false" onAction="#handleButtonQuestionClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 5">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
-                              <Button fx:id="btnQuestion4" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 4">
+                              <Button fx:id="btnQuestion4" mnemonicParsing="false" onAction="#handleButtonQuestionClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 4">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
-                              <Button fx:id="btnQuestion3" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 3">
+                              <Button fx:id="btnQuestion3" mnemonicParsing="false" onAction="#handleButtonQuestionClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 3">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
-                              <Button fx:id="btnQuestion2" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 2">
+                              <Button fx:id="btnQuestion2" mnemonicParsing="false" onAction="#handleButtonQuestionClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 2">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
-                              <Button fx:id="btnQuestion1" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 1">
+                              <Button fx:id="btnQuestion1" mnemonicParsing="false" onAction="#handleButtonQuestionClick" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 1">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
