@@ -11,7 +11,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("th/nguyenxuandat/BaiTH1_SimpleMath/fxml_simplemath.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/th/nguyenxuandat/BaiTH1_SimpleMath/fxml/fxml_simplemath.fxml"));
 
             Scene scene = new Scene(fxmlLoader.load(), 360, 640); 
             primaryStage.setTitle("Thực hành bài 1 SimpleMath");
