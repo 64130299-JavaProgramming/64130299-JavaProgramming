@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.event.ActionEvent;
 
 public class FlashQuizController {
 
@@ -27,7 +28,7 @@ public class FlashQuizController {
     }
 
     @FXML
-    public void handleButtonClick(javafx.event.ActionEvent event) {
+    public void handleButtonClick(ActionEvent event) {
         // Đưa tất cả button về màu mặc định
         for (Button btn : buttonQuestionList) {
             btn.setStyle("-fx-background-color: #D4EBF8;");
