@@ -69,7 +69,7 @@ public class FlashQuizController {
         }
 
         // Đổi màu nút và StackPane đúng
-        if (index != -1) {
+        if (index != -1) {// Xử lý thêm để xác đinh được câu trả lời đúng
         	buttonAnswerList.get(index).setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #399918;"); 
         	stackPaneAnswerList.get(index).setStyle("-fx-background-color: #399918;-fx-border-color: white;");
         }
