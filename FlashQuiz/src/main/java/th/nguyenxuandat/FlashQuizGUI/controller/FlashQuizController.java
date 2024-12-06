@@ -10,7 +10,7 @@ public class FlashQuizController {
     @FXML private Button btnQuestion1,btnQuestion2,btnQuestion3,btnQuestion4,btnQuestion5,
     btnQuestion6,btnQuestion7,btnQuestion8,btnQuestion9,btnQuestion10;
 
-    private List<Button> buttonList; // Danh sách các button để thực hiển đổi màu
+    private List<Button> buttonQuestionList; // Danh sách các button để thực hiển đổi màu
 
     @FXML
     public void initialize() {
@@ -19,17 +19,17 @@ public class FlashQuizController {
 
      //Hàm thêm tất cả các button vào danh sách để xử lý đổi màu
     private void initializeButtonList() {
-        buttonList = new ArrayList<>();
+    	buttonQuestionList = new ArrayList<>();
 
         // Lấy tất cả các button và thêm vào danh sách
-        buttonList.addAll(List.of(btnQuestion1, btnQuestion2, btnQuestion3, btnQuestion4, btnQuestion5, 
+    	buttonQuestionList.addAll(List.of(btnQuestion1, btnQuestion2, btnQuestion3, btnQuestion4, btnQuestion5, 
         		btnQuestion6, btnQuestion7, btnQuestion8, btnQuestion9, btnQuestion10));
     }
 
     @FXML
     public void handleButtonClick(javafx.event.ActionEvent event) {
         // Đưa tất cả button về màu mặc định
-        for (Button btn : buttonList) {
+        for (Button btn : buttonQuestionList) {
             btn.setStyle("-fx-background-color: #D4EBF8;");
         }
 
