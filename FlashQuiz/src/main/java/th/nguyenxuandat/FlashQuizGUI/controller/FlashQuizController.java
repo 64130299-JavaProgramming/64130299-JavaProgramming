@@ -62,16 +62,16 @@ public class FlashQuizController {
 
         // Đặt lại tất cả nút và StackPane về màu mặc định
         for (Button btnAnswer : buttonAnswerList) {
-        	btnAnswer.setStyle("-fx-background-color: #D4EBF8;");
+        	btnAnswer.setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;");
         }
         for (StackPane sp : stackPaneAnswerList) {
-            sp.setStyle("-fx-background-color: none;");
+            sp.setStyle("-fx-background-color: none;-fx-border-color: white;");
         }
 
         // Đổi màu nút và StackPane đúng
         if (index != -1) {
-        	buttonAnswerList.get(index).setStyle("-fx-background-color: #399918;"); 
-        	stackPaneAnswerList.get(index).setStyle("-fx-background-color: #399918;");
+        	buttonAnswerList.get(index).setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #399918;"); 
+        	stackPaneAnswerList.get(index).setStyle("-fx-background-color: #399918;-fx-border-color: white;");
         }
     }
 }
