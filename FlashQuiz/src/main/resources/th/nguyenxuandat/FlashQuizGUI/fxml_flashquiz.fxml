@@ -87,22 +87,22 @@
                            <children>
                               <VBox spacing="10.0">
                                  <children>
-                                    <Button id="btnAnswer1" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="A">
+                                    <Button id="btnAnswer1" fx:id="btnAnswer1" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="A">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
                                     </Button>
-                                    <Button id="btnAnswer2" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="B">
+                                    <Button id="btnAnswer2" fx:id="btnAnswer2" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="B">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
                                     </Button>
-                                    <Button id="btnAnswer3" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="C">
+                                    <Button id="btnAnswer3" fx:id="btnAnswer3" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="C">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
                                     </Button>
-                                    <Button id="btnAnswer4" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="D">
+                                    <Button id="btnAnswer4" fx:id="btnAnswer4" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="D">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -111,7 +111,7 @@
                               </VBox>
                               <VBox prefWidth="400.0" spacing="10.0">
                                  <children>
-                                    <StackPane id="spAnswer1" prefHeight="60.0" style="-fx-border-color: white;">
+                                    <StackPane id="spAnswer1" fx:id="spAnswer1" prefHeight="60.0" style="-fx-border-color: white;">
                                        <children>
                                           <Label text="Phương án A" textFill="WHITE">
                                              <font>
@@ -120,7 +120,7 @@
                                           </Label>
                                        </children>
                                     </StackPane>
-                                    <StackPane id="spAnswer2" prefHeight="60.0" style="-fx-border-color: white;">
+                                    <StackPane id="spAnswer2" fx:id="spAnswer2" prefHeight="60.0" style="-fx-border-color: white;">
                                        <children>
                                           <Label text="Phương án B" textFill="WHITE">
                                              <font>
@@ -129,7 +129,7 @@
                                           </Label>
                                        </children>
                                     </StackPane>
-                                    <StackPane id="spAnswer3" prefHeight="60.0" style="-fx-border-color: white;">
+                                    <StackPane id="spAnswer3" fx:id="spAnswer3" prefHeight="60.0" style="-fx-border-color: white;">
                                        <children>
                                           <Label text="Phương án C" textFill="WHITE">
                                              <font>
@@ -138,7 +138,7 @@
                                           </Label>
                                        </children>
                                     </StackPane>
-                                    <StackPane prefHeight="60.0" style="-fx-border-color: white;">
+                                    <StackPane fx:id="spAnswer4" prefHeight="60.0" style="-fx-border-color: white;">
                                        <children>
                                           <Label id="spAnswer4" text="Phương án D" textFill="WHITE">
                                              <font>
