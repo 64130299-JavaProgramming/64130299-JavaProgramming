@@ -52,18 +52,18 @@ public class SimpleMathController {
                     if (b != 0) {
                         result = a / b;
                     } else {
-                        resultLabel.setText("Error: Division by zero");
+                        resultLabel.setText("Lỗi không chia được một số cho )");
                         return;
                     }
                     break;
                 default:
-                    resultLabel.setText("Invalid operation");
+                    resultLabel.setText("Không xác định được biểu thức tính");
                     return;
             }
             // Hiển thị kết quả
-            resultLabel.setText("Result: " + result);
+            resultLabel.setText("Kết quả " + result);
         } catch (NumberFormatException e) {
-            resultLabel.setText("Error: Please enter valid numbers");
+            resultLabel.setText("Vui lòng nhập số bất kì trong ô");
         }
     }
   

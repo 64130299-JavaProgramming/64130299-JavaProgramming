@@ -2,7 +2,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" 
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+			fx:controller="/th/nguyenxuandat/BaiTH1_SimpleMath/controller/SimpleMathController" 
             prefWidth="360" prefHeight="640">
     <VBox spacing="15" alignment="CENTER" prefWidth="360" prefHeight="640">
         <Label text="Simple Math" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;" />
