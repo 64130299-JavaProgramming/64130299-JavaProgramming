@@ -1,45 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23">
+<AnchorPane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="515.0" prefWidth="797.0">
+      <AnchorPane>
          <children>
-            <BorderPane prefHeight="515.0" prefWidth="797.0">
+            <BorderPane prefHeight="570.0" prefWidth="971.0">
                <left>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
                      <children>
-                        <Label layoutX="43.0" layoutY="35.0" text="FLASH QZ" textFill="WHITE">
+                        <Label layoutX="43.0" layoutY="21.0" text="FLASH QZ" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <VBox alignment="CENTER" layoutX="20.0" layoutY="81.0" prefHeight="391.0" prefWidth="160.0" spacing="10.0">
+                        <VBox alignment="CENTER" layoutX="18.0" layoutY="67.0" prefHeight="463.0" prefWidth="164.0" spacing="10.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Câu 1" />
-                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Câu 2" />
-                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Câu 3" />
-                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Câu 4" />
-                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Câu 5" />
-                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Câu 6" />
-                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Câu 7" />
-                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Câu 8" />
-                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Câu 9" />
-                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Câu 10" />
+                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 10">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 9">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 8">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 7">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 6">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 5">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 4">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 3">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 2">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 1">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
                            </children>
                         </VBox>
                      </children>
                   </AnchorPane>
                </left>
                <center>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2794EB;" BorderPane.alignment="CENTER" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2794EB;" BorderPane.alignment="CENTER">
+                     <children>
+                        <StackPane layoutX="18.0" layoutY="14.0" prefHeight="240.0" prefWidth="734.0" style="-fx-border-color: white;">
+                           <children>
+                              <Label text="Lời câu hỏi 1 ở đây" textFill="WHITE">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <HBox layoutX="18.0" layoutY="285.0" spacing="10.0">
+                           <children>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="A">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Button>
+                                    <Button mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="B">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Button>
+                                    <Button mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="C">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Button>
+                                    <Button mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="D">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="400.0" spacing="10.0">
+                                 <children>
+                                    <StackPane prefHeight="60.0" style="-fx-border-color: white;">
+                                       <children>
+                                          <Label text="Phương án A" textFill="WHITE">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane prefHeight="60.0" style="-fx-border-color: white;">
+                                       <children>
+                                          <Label text="Phương án B" textFill="WHITE">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane prefHeight="60.0" style="-fx-border-color: white;">
+                                       <children>
+                                          <Label text="Phương án C" textFill="WHITE">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane prefHeight="60.0" style="-fx-border-color: white;">
+                                       <children>
+                                          <Label text="Phương án D" textFill="WHITE">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <VBox alignment="TOP_CENTER" layoutX="652.0" layoutY="444.0" spacing="5.0">
+                           <children>
+                              <Label text="Điểm" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TextField alignment="CENTER" disable="true" prefHeight="80.0" prefWidth="100.0">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></AnchorPane>
                </center>
             </BorderPane>
          </children>
