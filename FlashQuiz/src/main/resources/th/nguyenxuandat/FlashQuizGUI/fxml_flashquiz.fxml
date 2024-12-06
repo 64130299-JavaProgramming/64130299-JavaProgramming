@@ -62,7 +62,7 @@
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
-                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D4EBF8;" text="Câu 1">
+                              <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FF7F3E;" text="Câu 1">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Button>
@@ -92,7 +92,7 @@
                                           <Font name="System Bold" size="24.0" />
                                        </font>
                                     </Button>
-                                    <Button mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;" text="B">
+                                    <Button mnemonicParsing="false" style="-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #00FF9C;" text="B">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -120,7 +120,7 @@
                                           </Label>
                                        </children>
                                     </StackPane>
-                                    <StackPane prefHeight="60.0" style="-fx-border-color: white;">
+                                    <StackPane prefHeight="60.0" style="-fx-border-color: white; -fx-background-color: #00FF9C;">
                                        <children>
                                           <Label text="Phương án B" textFill="WHITE">
                                              <font>
@@ -158,7 +158,7 @@
                                     <Font name="Arial Bold" size="24.0" />
                                  </font>
                               </Label>
-                              <TextField alignment="CENTER" disable="true" prefHeight="80.0" prefWidth="100.0">
+                              <TextField alignment="CENTER" disable="true" prefHeight="80.0" prefWidth="100.0" promptText="10">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
