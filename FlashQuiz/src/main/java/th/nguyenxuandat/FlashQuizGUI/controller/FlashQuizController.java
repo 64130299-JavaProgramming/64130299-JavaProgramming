@@ -55,7 +55,7 @@ public class FlashQuizController {
     }
     
     @FXML
-    public void handleButtonClick(ActionEvent event) {
+    public void handleAnswerButtonClick(ActionEvent event) {
         // Lấy nút được nhấn
         Button clickedAnswerButton = (Button) event.getSource();
         int index = buttonAnswerList.indexOf(clickedAnswerButton);
