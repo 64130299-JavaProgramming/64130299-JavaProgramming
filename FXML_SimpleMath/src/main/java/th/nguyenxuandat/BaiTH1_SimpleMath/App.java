@@ -1,0 +1,29 @@
+package th.nguyenxuandat.BaiTH1_SimpleMath;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class App extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("th/nguyenxuandat/BaiTH1_SimpleMath/fxml_simplemath.fxml"));
+
+            Scene scene = new Scene(fxmlLoader.load(), 360, 640); 
+            primaryStage.setTitle("Thực hành bài 1 SimpleMath");
+
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
