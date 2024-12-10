@@ -74,9 +74,9 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2794EB;" BorderPane.alignment="CENTER">
                      <children>
-                        <StackPane fx:id="lblQuestion" layoutX="18.0" layoutY="14.0" prefHeight="240.0" prefWidth="734.0" style="-fx-border-color: white;">
+                        <StackPane layoutX="18.0" layoutY="14.0" prefHeight="240.0" prefWidth="734.0" style="-fx-border-color: white;">
                            <children>
-                              <Label text="Lời câu hỏi 1 ở đây" textFill="WHITE">
+                              <Label fx:id="lblQuestion" text="Lời câu hỏi 1 ở đây" textFill="WHITE">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
@@ -158,7 +158,7 @@
                                     <Font name="Arial Bold" size="24.0" />
                                  </font>
                               </Label>
-                              <TextField alignment="CENTER" disable="true" prefHeight="80.0" prefWidth="100.0">
+                              <TextField fx:id="tfScore" alignment="CENTER" disable="true" prefHeight="80.0" prefWidth="100.0">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
