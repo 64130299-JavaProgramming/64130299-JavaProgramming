@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import th.nguyenxuandat.FlashQuizGUI.models.Question;
 import th.nguyenxuandat.FlashQuizGUI.utils.ExcelReader;
@@ -44,9 +46,8 @@ public class FlashQuizController {
 	@FXML
 	private TextField tfScore;
 	
-	// Định nghĩa các tệp âm thanh
-    private static final String CORRECT_ANSWER_SOUND = "/th/nguyenxuandat/FlashQuizGUI/controller/correct.wav";
-    private static final String INCORRECT_ANSWER_SOUND = "/th/nguyenxuandat/FlashQuizGUI/controller/incorrect.mp3";
+	@FXML
+    private ImageView imgQuestion;
 
 	private List<Button> buttonQuestionList = new ArrayList<>(); // Danh sách các button để thực hiển đổi màu
 
@@ -91,6 +92,7 @@ public class FlashQuizController {
 		// Lấy câu hỏi từ danh sách và cập nhật giao diện
 		Question question = questionList.get(questionIndex);
 		lblQuestion.setText(question.getQuestionText()); // Cập nhật câu hỏi vào Label
+		String imageUrl = question.getImageUrl();
 
 		// Cập nhật các phương án trả lời vào các Label tương ứng
 		String[] options = question.getOptions();
@@ -98,6 +100,17 @@ public class FlashQuizController {
 		lblAnswerB.setText(options[1]);
 		lblAnswerC.setText(options[2]);
 		lblAnswerD.setText(options[3]);
+		
+		// Load ảnh từ link và hiển thị
+		if (imageUrl != null && !imageUrl.isEmpty()) {
+	        try {
+	            Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
+	            imgQuestion.setImage(image);
+	        } catch (Exception e) {
+	            System.err.println("Error loading image: " + imageUrl);
+	            e.printStackTrace();
+	        }
+	    }
 		
 		// Đặt lại màu nền của các button và stackpane về mặc định
 	    resetAnswerStyles();
