@@ -48,7 +48,4 @@
 
 ## **4. Ứng dụng trắc nghiệm FlashQuiz**
 ### 🔹 Video:
-<video width="480" height="270" controls>
-  <source src="https://github.com/user-attachments/assets/0da5569b-3475-4a1a-8c01-15d9908bb2eb.mp4" type="video/mp4">
-  Trình duyệt của bạn không hỗ trợ video.
-</video>
+https://github.com/user-attachments/assets/0da5569b-3475-4a1a-8c01-15d9908bb2eb.mp4
