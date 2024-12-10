@@ -14,121 +14,148 @@ import javafx.event.ActionEvent;
 
 public class FlashQuizController {
 
-    @FXML private Button btnQuestion1,btnQuestion2,btnQuestion3,btnQuestion4,
-    btnQuestion5,btnQuestion6,btnQuestion7,btnQuestion8,btnQuestion9,btnQuestion10;
-    
-    @FXML private Button btnAnswer1, btnAnswer2, btnAnswer3, btnAnswer4;
-    
-    @FXML private StackPane spAnswer1, spAnswer2, spAnswer3, spAnswer4;
-   
-    @FXML private Label lblQuestion;
-    
-    @FXML private TextField tfScore;
+	@FXML
+	private Button btnQuestion1, btnQuestion2, btnQuestion3, btnQuestion4, btnQuestion5, btnQuestion6, btnQuestion7,
+			btnQuestion8, btnQuestion9, btnQuestion10;
 
-    private List<Button> buttonQuestionList = new ArrayList<>(); // Danh sách các button để thực hiển đổi màu
-    
-    //Danh sách các button và stackpane câu trả lời
-    private List<Button> buttonAnswerList = new ArrayList<>();
-    private List<StackPane> stackPaneAnswerList = new ArrayList<>();
-    
-    private List<Question> questionList = new ArrayList<>();
-    private int currentQuestionIndex = 0;
-    private double score = 0.0;
+	@FXML
+	private Button btnAnswer1, btnAnswer2, btnAnswer3, btnAnswer4;
 
-    @FXML
-    public void initialize() {
-        initializeQuestionButtonList();
-        initializeAnswerButtonList();
-        
-        //Đọc câu hỏi từ file Excel
-        questionList = ExcelReader.readQuestionsFromExcel("MonAnVietNam_Updated.xlsx");
-        
-        //Load câu hỏi đầu tiên
-        if(!questionList.isEmpty()) {
-        	loadQuestion(0);
-        	highlightButton(buttonQuestionList.get(0));
-        }
-    }
+	@FXML
+	private StackPane spAnswer1, spAnswer2, spAnswer3, spAnswer4;
 
-     private void highlightButton(Button button) {
-		//Đặt màu nền cho các nút được chọn
-    	for(Button btn: buttonQuestionList) {
-    		btn.setStyle("-fx-background-color: #D4EBF8;");
-    	}
-		//Đổi màu cho các button được nhấn
-    	button.setStyle("-fx-background-color: #F96E2A;");
+	@FXML
+	private Label lblAnswerA, lblAnswerB, lblAnswerC, lblAnswerD;
+
+	@FXML
+	private Label lblQuestion;
+
+	@FXML
+	private TextField tfScore;
+
+	private List<Button> buttonQuestionList = new ArrayList<>(); // Danh sách các button để thực hiển đổi màu
+
+	// Danh sách các button và stackpane câu trả lời
+	private List<Button> buttonAnswerList = new ArrayList<>();
+	private List<StackPane> stackPaneAnswerList = new ArrayList<>();
+
+	private List<Question> questionList = new ArrayList<>();
+	private int currentQuestionIndex = 0;
+	private double score = 0.0;
+
+	@FXML
+	public void initialize() {
+		initializeQuestionButtonList();
+		initializeAnswerButtonList();
+
+		// Đọc câu hỏi từ file Excel
+		questionList = ExcelReader.readQuestionsFromExcel(
+				"src/main/java/th/nguyenxuandat/FlashQuizGUI/controller/MonAnVietNam_Updated.xlsx");
+
+		// Load câu hỏi đầu tiên
+		if (!questionList.isEmpty()) {
+			loadQuestion(0);
+			highlightButton(buttonQuestionList.get(0));
+		}
+	}
+
+	private void highlightButton(Button button) {
+		// Đặt màu nền cho các nút được chọn
+		for (Button btn : buttonQuestionList) {
+			btn.setStyle("-fx-background-color: #D4EBF8;");
+		}
+		// Đổi màu cho các button được nhấn
+		button.setStyle("-fx-background-color: #F96E2A;");
 	}
 
 	private void loadQuestion(int questionIndex) {
 		// Kiểm tra chỉ số câu hỏi hợp lệ
-		if(questionIndex < 0 || questionIndex >= questionList.size()) return;
-		
+		if (questionIndex < 0 || questionIndex >= questionList.size())
+			return;
+
 		// Lấy câu hỏi từ danh sách và cập nhật giao diện
 		Question question = questionList.get(questionIndex);
-		btnQuestion1.setText(question.getQuestionText());
+		lblQuestion.setText(question.getQuestionText()); // Cập nhật câu hỏi vào Label
+
+		// Cập nhật các phương án trả lời vào các Label tương ứng
 		String[] options = question.getOptions();
-		for (int i = 0; i < options.length;i++) {
-			buttonAnswerList.get(i).setText(options[i]);
+		lblAnswerA.setText(options[0]);
+		lblAnswerB.setText(options[1]);
+		lblAnswerC.setText(options[2]);
+		lblAnswerD.setText(options[3]);
+		
+		// Đặt lại màu nền của các button và stackpane về mặc định
+	    resetAnswerStyles();
+	}
+
+	private void resetAnswerStyles() {
+		for (Button btn : buttonAnswerList) {
+	        btn.setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;");
+	    }
+	    for (StackPane sp : stackPaneAnswerList) {
+	        sp.setStyle("-fx-background-color: none; -fx-border-color: white;");
+	    }
+	}
+
+	// Hàm thêm tất cả các button vào danh sách để xử lý đổi màu
+	private void initializeQuestionButtonList() {
+		// Lấy tất cả các button và thêm vào danh sách
+		buttonQuestionList.addAll(List.of(btnQuestion1, btnQuestion2, btnQuestion3, btnQuestion4, btnQuestion5,
+				btnQuestion6, btnQuestion7, btnQuestion8, btnQuestion9, btnQuestion10));
+	}
+
+	// Hàm thêm các btn và stackpane vào danh sách để xử lý đổi màu
+	private void initializeAnswerButtonList() {
+		buttonAnswerList.addAll(List.of(btnAnswer1, btnAnswer2, btnAnswer3, btnAnswer4));
+		stackPaneAnswerList.addAll(List.of(spAnswer1, spAnswer2, spAnswer3, spAnswer4));
+	}
+
+	@FXML
+	public void handleButtonQuestionClick(ActionEvent event) {
+		// Xử lý khi người dùng nhấn nút câu hỏi
+		Button clickedQuestion = (Button) event.getSource();
+		int questionIndex = buttonQuestionList.indexOf(clickedQuestion);
+
+		if (questionIndex != -1) {
+			currentQuestionIndex = questionIndex; // Cập nhật chỉ số câu hỏi hiện tại
+			highlightButton(clickedQuestion);// Đổi màu nút câu hỏi được chọn
+			loadQuestion(questionIndex); // Load câu hỏi tương ứng
 		}
 	}
 
-	//Hàm thêm tất cả các button vào danh sách để xử lý đổi màu
-    private void initializeQuestionButtonList() {
-        // Lấy tất cả các button và thêm vào danh sách
-    	buttonQuestionList.addAll(List.of(btnQuestion1, btnQuestion2, btnQuestion3, btnQuestion4, btnQuestion5, 
-        		btnQuestion6, btnQuestion7, btnQuestion8, btnQuestion9, btnQuestion10));
-    }
-    
-    //Hàm thêm các btn và stackpane vào danh sách để xử lý đổi màu
-    private void initializeAnswerButtonList() {
-    	buttonAnswerList.addAll(List.of(btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4));
-    	stackPaneAnswerList.addAll(List.of(spAnswer1,spAnswer2,spAnswer3,spAnswer4));
-    }
+	@FXML
+	public void handleAnswerButtonClick(ActionEvent event) {
+		// Lấy nút được nhấn
+		Button clickedAnswerButton = (Button) event.getSource();
+		int index = buttonAnswerList.indexOf(clickedAnswerButton);
+		// Đổi màu nút và StackPane đúng
+		if (index != -1) {
+			Question currentQuestion = questionList.get(currentQuestionIndex);
+			String selectedAnswer = buttonAnswerList.get(index).getText();
 
-    @FXML
-    public void handleButtonQuestionClick(ActionEvent event) {
-        //Xử lý khi người dùng nhấn nút câu hỏi
-    	Button clickedQuestion = (Button) event.getSource();
-    	int questionIndex = buttonQuestionList.indexOf(questionList);
-    	
-    	if(questionIndex != -1) {
-    		currentQuestionIndex = questionIndex; // Cập nhật chỉ số câu hỏi hiện tại
-    		highlightButton(clickedQuestion);// Đổi màu nút câu hỏi được chọn
-    		loadQuestion(questionIndex); // Load câu hỏi tương ứng
-    	}
-    }
-    
-    @FXML
-    public void handleAnswerButtonClick(ActionEvent event) {
-        // Lấy nút được nhấn
-        Button clickedAnswerButton = (Button) event.getSource();
-        int index = buttonAnswerList.indexOf(clickedAnswerButton);
-        // Đổi màu nút và StackPane đúng
-        if (index != -1) {
-        	Question currentQuestion = questionList.get(currentQuestionIndex);
-        	String selectedAnswer = buttonAnswerList.get(index).getText();
-        	
-        	// Đặt lại tất cả nút và StackPane về màu mặc định
-            for (Button btnAnswer : buttonAnswerList) {
-            	btnAnswer.setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;");
-            }
-            for (StackPane sp : stackPaneAnswerList) {
-                sp.setStyle("-fx-background-color: none;-fx-border-color: white;");
-            }
-            
-            //Kiểm tra câu trả lời để cập nhật điểm số và giao diện
-            if(selectedAnswer.equals(currentQuestion.getCorrectAnswer())) {
-            	score += 1.0;
-            	clickedAnswerButton.setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #399918;");
-            	stackPaneAnswerList.get(index).setStyle("-fx-background-color: #399918;-fx-border-color: white;");
-            } else {
-            	score -= 0.2;
-            	clickedAnswerButton.setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #FA1616;");
-            	stackPaneAnswerList.get(index).setStyle("-fx-background-color: #FA1616;-fx-border-color: white;");
-            }
-        	//Cập nhật điểm số hiển thị
-            tfScore.setText(String.format("1.f", score));
-        }
-    }
+			// Đặt lại tất cả nút và StackPane về màu mặc định
+			for (Button btnAnswer : buttonAnswerList) {
+				btnAnswer.setStyle(
+						"-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;");
+			}
+			for (StackPane sp : stackPaneAnswerList) {
+				sp.setStyle("-fx-background-color: none;-fx-border-color: white;");
+			}
+
+			// Kiểm tra câu trả lời để cập nhật điểm số và giao diện
+			if (selectedAnswer.equals(currentQuestion.getCorrectAnswer())) {
+				score += 1.0;
+				clickedAnswerButton.setStyle(
+						"-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #399918;");
+				stackPaneAnswerList.get(index).setStyle("-fx-background-color: #399918;-fx-border-color: white;");
+			} else {
+				score -= 0.2;
+				clickedAnswerButton.setStyle(
+						"-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #FA1616;");
+				stackPaneAnswerList.get(index).setStyle("-fx-background-color: #FA1616;-fx-border-color: white;");
+			}
+			// Cập nhật điểm số hiển thị
+			tfScore.setText(String.format("%.1f", score));
+		}
+	}
 }
-
