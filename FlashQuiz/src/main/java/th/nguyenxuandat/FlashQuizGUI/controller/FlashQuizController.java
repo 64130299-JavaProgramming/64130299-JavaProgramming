@@ -93,7 +93,7 @@ public class FlashQuizController {
     	
     	if(questionIndex != -1) {
     		currentQuestionIndex = questionIndex; // Cập nhật chỉ số câu hỏi hiện tại
-    		highlightButton(clickedQuestion);// Đổi màu nút câu hỏi được chonk
+    		highlightButton(clickedQuestion);// Đổi màu nút câu hỏi được chọn
     		loadQuestion(questionIndex); // Load câu hỏi tương ứng
     	}
     }
@@ -103,19 +103,31 @@ public class FlashQuizController {
         // Lấy nút được nhấn
         Button clickedAnswerButton = (Button) event.getSource();
         int index = buttonAnswerList.indexOf(clickedAnswerButton);
-
-        // Đặt lại tất cả nút và StackPane về màu mặc định
-        for (Button btnAnswer : buttonAnswerList) {
-        	btnAnswer.setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;");
-        }
-        for (StackPane sp : stackPaneAnswerList) {
-            sp.setStyle("-fx-background-color: none;-fx-border-color: white;");
-        }
-
         // Đổi màu nút và StackPane đúng
-        if (index != -1) {// Xử lý thêm để xác đinh được câu trả lời đúng
-        	buttonAnswerList.get(index).setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #399918;"); 
-        	stackPaneAnswerList.get(index).setStyle("-fx-background-color: #399918;-fx-border-color: white;");
+        if (index != -1) {
+        	Question currentQuestion = questionList.get(currentQuestionIndex);
+        	String selectedAnswer = buttonAnswerList.get(index).getText();
+        	
+        	// Đặt lại tất cả nút và StackPane về màu mặc định
+            for (Button btnAnswer : buttonAnswerList) {
+            	btnAnswer.setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #D4EBF8;");
+            }
+            for (StackPane sp : stackPaneAnswerList) {
+                sp.setStyle("-fx-background-color: none;-fx-border-color: white;");
+            }
+            
+            //Kiểm tra câu trả lời để cập nhật điểm số và giao diện
+            if(selectedAnswer.equals(currentQuestion.getCorrectAnswer())) {
+            	score += 1.0;
+            	clickedAnswerButton.setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #399918;");
+            	stackPaneAnswerList.get(index).setStyle("-fx-background-color: #399918;-fx-border-color: white;");
+            } else {
+            	score -= 0.2;
+            	clickedAnswerButton.setStyle("-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #FA1616;");
+            	stackPaneAnswerList.get(index).setStyle("-fx-background-color: #FA1616;-fx-border-color: white;");
+            }
+        	//Cập nhật điểm số hiển thị
+            tfScore.setText(String.format("1.f", score));
         }
     }
 }
