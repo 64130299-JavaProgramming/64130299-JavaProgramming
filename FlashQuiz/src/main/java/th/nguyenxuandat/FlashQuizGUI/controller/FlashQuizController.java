@@ -87,14 +87,15 @@ public class FlashQuizController {
 
     @FXML
     public void handleButtonQuestionClick(ActionEvent event) {
-        // Đưa tất cả button về màu mặc định
-        for (Button btn : buttonQuestionList) {
-            btn.setStyle("-fx-background-color: #D4EBF8;");
-        }
-
-        // Đổi màu cho button được nhấn
-        Button clickedButton = (Button) event.getSource();
-        clickedButton.setStyle("-fx-background-color: #F96E2A;");
+        //Xử lý khi người dùng nhấn nút câu hỏi
+    	Button clickedQuestion = (Button) event.getSource();
+    	int questionIndex = buttonQuestionList.indexOf(questionList);
+    	
+    	if(questionIndex != -1) {
+    		currentQuestionIndex = questionIndex; // Cập nhật chỉ số câu hỏi hiện tại
+    		highlightButton(clickedQuestion);// Đổi màu nút câu hỏi được chonk
+    		loadQuestion(questionIndex); // Load câu hỏi tương ứng
+    	}
     }
     
     @FXML
