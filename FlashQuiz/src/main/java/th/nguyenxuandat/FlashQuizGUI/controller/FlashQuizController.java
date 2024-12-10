@@ -2,7 +2,10 @@ package th.nguyenxuandat.FlashQuizGUI.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
+import th.nguyenxuandat.FlashQuizGUI.models.Question;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +19,20 @@ public class FlashQuizController {
     @FXML private Button btnAnswer1, btnAnswer2, btnAnswer3, btnAnswer4;
     
     @FXML private StackPane spAnswer1, spAnswer2, spAnswer3, spAnswer4;
+   
+    @FXML private Label lblQuestion;
+    
+    @FXML private TextField tfScore;
 
     private List<Button> buttonQuestionList = new ArrayList<>(); // Danh sách các button để thực hiển đổi màu
     
     //Danh sách các button và stackpane câu trả lời
     private List<Button> buttonAnswerList = new ArrayList<>();
     private List<StackPane> stackPaneAnswerList = new ArrayList<>();
+    
+    private List<Question> questionList = new ArrayList<>();
+    private int currentQuestionIndex = 0;
+    private double score = 0.0;
 
     @FXML
     public void initialize() {
