@@ -59,9 +59,17 @@ public class FlashQuizController {
     	button.setStyle("-fx-background-color: #F96E2A;");
 	}
 
-	private void loadQuestion(int i) {
-		// TODO Auto-generated method stub
+	private void loadQuestion(int questionIndex) {
+		// Kiểm tra chỉ số câu hỏi hợp lệ
+		if(questionIndex < 0 || questionIndex >= questionList.size()) return;
 		
+		// Lấy câu hỏi từ danh sách và cập nhật giao diện
+		Question question = questionList.get(questionIndex);
+		btnQuestion1.setText(question.getQuestionText());
+		String[] options = question.getOptions();
+		for (int i = 0; i < options.length;i++) {
+			buttonAnswerList.get(i).setText(options[i]);
+		}
 	}
 
 	//Hàm thêm tất cả các button vào danh sách để xử lý đổi màu
