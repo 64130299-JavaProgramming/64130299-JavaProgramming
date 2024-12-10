@@ -23,7 +23,8 @@ public class ExcelReader {
                 String optionC = row.getCell(3).getStringCellValue();
                 String optionD = row.getCell(4).getStringCellValue();
                 String correctAnswer = row.getCell(5).getStringCellValue();
-                questions.add(new Question(questionText, new String[]{optionA, optionB, optionC, optionD}, correctAnswer));
+                String imageUrl = row.getCell(6) != null ? row.getCell(6).getStringCellValue() : "";
+                questions.add(new Question(questionText, new String[]{optionA, optionB, optionC, optionD}, correctAnswer,imageUrl));
             }
         } catch (Exception e) {
             e.printStackTrace();
