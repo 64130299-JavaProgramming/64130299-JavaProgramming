@@ -45,3 +45,9 @@
   <img src="https://github.com/datx24/64130299-JavaProgramming/blob/main/DemoBanHang/Screenshot%202024-11-22%20154216.png" width="400" alt="Đăng nhập thành công">
   <img src="https://github.com/datx24/64130299-JavaProgramming/blob/main/DemoBanHang/Screenshot%202024-11-22%20154229.png" width="400" alt="Đăng nhập thất bại">
 </div>
+
+## **4. Ứng dụng trắc nghiệm FlashQuiz**
+### 🔹 Video:
+<video width="640" height="360" controls>
+  <source src="path/to/video.mp4" type="video/mp4">
+</video>
