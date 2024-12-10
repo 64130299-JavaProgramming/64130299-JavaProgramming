@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import th.nguyenxuandat.FlashQuizGUI.models.Question;
+import th.nguyenxuandat.FlashQuizGUI.utils.ExcelReader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,9 +39,32 @@ public class FlashQuizController {
     public void initialize() {
         initializeQuestionButtonList();
         initializeAnswerButtonList();
+        
+        //Đọc câu hỏi từ file Excel
+        questionList = ExcelReader.readQuestionsFromExcel("MonAnVietNam_Updated.xlsx");
+        
+        //Load câu hỏi đầu tiên
+        if(!questionList.isEmpty()) {
+        	loadQuestion(0);
+        	highlightButton(buttonQuestionList.get(0));
+        }
     }
 
-     //Hàm thêm tất cả các button vào danh sách để xử lý đổi màu
+     private void highlightButton(Button button) {
+		//Đặt màu nền cho các nút được chọn
+    	for(Button btn: buttonQuestionList) {
+    		btn.setStyle("-fx-background-color: #D4EBF8;");
+    	}
+		//Đổi màu cho các button được nhấn
+    	button.setStyle("-fx-background-color: #F96E2A;");
+	}
+
+	private void loadQuestion(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	//Hàm thêm tất cả các button vào danh sách để xử lý đổi màu
     private void initializeQuestionButtonList() {
         // Lấy tất cả các button và thêm vào danh sách
     	buttonQuestionList.addAll(List.of(btnQuestion1, btnQuestion2, btnQuestion3, btnQuestion4, btnQuestion5, 
