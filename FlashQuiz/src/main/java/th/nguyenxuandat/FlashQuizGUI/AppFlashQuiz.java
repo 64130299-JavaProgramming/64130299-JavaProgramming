@@ -11,7 +11,7 @@ public class AppFlashQuiz extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/th/nguyenxuandat/FlashQuizGUI/fxml_flashquiz.fxml"));
+        	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/th/nguyenxuandat/FlashQuizGUI/fxml_flashquiz.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 971, 570); 
             primaryStage.setTitle("App Flash Quiz");
             primaryStage.setScene(scene);

@@ -68,6 +68,12 @@
         <artifactId>log4j-core</artifactId>
         <version>2.20.0</version>
     </dependency>
+    
+    <dependency>
+    <groupId>javazoom</groupId>
+    <artifactId>jlayer</artifactId>
+    <version>1.0.1</version>
+</dependency>
     </dependencies>
 
     <build>
@@ -96,7 +102,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>th.nguyenxuandat.Main</mainClass> <!-- Đặt tên class chính -->
+                    <mainClass>th.nguyenxuandat.FlashQuizGUI.AppFlashQuiz</mainClass> <!-- Đặt tên class chính -->
                     <javafx>
                         <modules>
                             <module>javafx.controls</module>

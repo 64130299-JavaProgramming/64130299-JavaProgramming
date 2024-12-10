@@ -8,9 +8,20 @@ import javafx.scene.layout.StackPane;
 import th.nguyenxuandat.FlashQuizGUI.models.Question;
 import th.nguyenxuandat.FlashQuizGUI.utils.ExcelReader;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.event.ActionEvent;
+import javax.sound.sampled.*;
+import java.io.IOException;
+import java.net.URL;
+import javazoom.jl.decoder.Bitstream;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.advanced.AdvancedPlayer;
+
+import java.io.FileInputStream;
+import java.net.URL;
+
 
 public class FlashQuizController {
 
@@ -32,6 +43,10 @@ public class FlashQuizController {
 
 	@FXML
 	private TextField tfScore;
+	
+	// Định nghĩa các tệp âm thanh
+    private static final String CORRECT_ANSWER_SOUND = "/th/nguyenxuandat/FlashQuizGUI/controller/correct.wav";
+    private static final String INCORRECT_ANSWER_SOUND = "/th/nguyenxuandat/FlashQuizGUI/controller/incorrect.mp3";
 
 	private List<Button> buttonQuestionList = new ArrayList<>(); // Danh sách các button để thực hiển đổi màu
 
@@ -148,14 +163,39 @@ public class FlashQuizController {
 				clickedAnswerButton.setStyle(
 						"-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #399918;");
 				stackPaneAnswerList.get(index).setStyle("-fx-background-color: #399918;-fx-border-color: white;");
+				// Phát âm thanh cho câu trả lời đúng
+				playSound("/th/nguyenxuandat/FlashQuizGUI/controller/correct-choice-43861.mp3");
 			} else {
 				score -= 0.2;
 				clickedAnswerButton.setStyle(
 						"-fx-background-radius: 50; -fx-pref-width: 60; -fx-pref-height: 60; -fx-background-color: #FA1616;");
 				stackPaneAnswerList.get(index).setStyle("-fx-background-color: #FA1616;-fx-border-color: white;");
+				// Phát âm thanh cho câu trả lời sai
+                playSound("/th/nguyenxuandat/FlashQuizGUI/controller/incorrect.mp3");
 			}
 			// Cập nhật điểm số hiển thị
 			tfScore.setText(String.format("%.1f", score));
 		}
 	}
+	private void playSound(String soundFilePath) {
+	    try {
+	        // Lấy đường dẫn từ tài nguyên dự án
+	        URL soundURL = getClass().getResource(soundFilePath);
+	        if (soundURL == null) {
+	            System.err.println("Sound file not found: " + soundFilePath);
+	            return;
+	        }
+
+	        // Dùng JLayer để phát file MP3
+	        FileInputStream fileInputStream = new FileInputStream(soundURL.getFile());
+	        AdvancedPlayer player = new AdvancedPlayer(fileInputStream);
+	        player.play();
+	    } catch (JavaLayerException | IOException e) {
+	        System.err.println("Error playing MP3: " + e.getMessage());
+	        e.printStackTrace();
+	    }
+	}
+
+
+
 }
