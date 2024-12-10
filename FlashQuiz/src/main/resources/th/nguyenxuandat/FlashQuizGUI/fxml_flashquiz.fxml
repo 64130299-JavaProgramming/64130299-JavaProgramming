@@ -74,7 +74,7 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2794EB;" BorderPane.alignment="CENTER">
                      <children>
-                        <StackPane layoutX="18.0" layoutY="14.0" prefHeight="240.0" prefWidth="734.0" style="-fx-border-color: white;">
+                        <StackPane fx:id="lblQuestion" layoutX="18.0" layoutY="14.0" prefHeight="240.0" prefWidth="734.0" style="-fx-border-color: white;">
                            <children>
                               <Label text="Lời câu hỏi 1 ở đây" textFill="WHITE">
                                  <font>
