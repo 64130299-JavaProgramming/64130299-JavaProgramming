@@ -49,5 +49,5 @@
 ## **4. Ứng dụng trắc nghiệm FlashQuiz**
 ### 🔹 Video:
 <video width="640" height="360" controls>
-  <source src="https://github.com/datx24/64130299-JavaProgramming/blob/main/FlashQuiz/App%20Flash%20Quiz%202024-12-11%2000-14-47.mp4" type="video/mp4">
+  <source src="https://github.com/user-attachments/assets/0da5569b-3475-4a1a-8c01-15d9908bb2eb" type="video/mp4">
 </video>
