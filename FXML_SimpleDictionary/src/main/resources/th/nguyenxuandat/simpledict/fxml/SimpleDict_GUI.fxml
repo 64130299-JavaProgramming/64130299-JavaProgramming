@@ -9,38 +9,38 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.nguyenxuandat.simpledict.controller.SimpleDict_Controller">
    <children>
       <BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f0f0f0;">
          <top>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0" spacing="10" style="-fx-background-color: #4CAF50;" BorderPane.alignment="CENTER">
                <children>
-                  <TextField promptText="Tìm kiếm từ..." style="-fx-padding: 10; -fx-font-size: 14px;" />
-                  <Button mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-text-fill: #4CAF50; -fx-font-size: 14px; -fx-padding: 10 20;" text="Tìm" />
+                  <TextField fx:id="searchField" promptText="Tìm kiếm từ..." style="-fx-padding: 10; -fx-font-size: 14px;" />
+                  <Button fx:id="searchButton" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-text-fill: #4CAF50; -fx-font-size: 14px; -fx-padding: 10 20;" text="Tìm" />
                </children>
             </HBox>
          </top>
          <left>
-            <ListView prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #4CAF50; -fx-border-width: 1;" BorderPane.alignment="CENTER">
-               <items>
-                  <!-- Thêm các mục vào ListView ở đây -->
-               </items>
-            </ListView>
+            <ListView fx:id="wordListView" prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #4CAF50; -fx-border-width: 1; fx-font-size: 24px;" BorderPane.alignment="CENTER" />
          </left>
          <center>
             <VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="10" style="-fx-padding: 10;" BorderPane.alignment="CENTER">
                <Label style="-fx-font-family: 'Arial'; -fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #4CAF50;" text="Chi tiết từ" />
-               <TextArea prefHeight="300.0" prefWidth="400.0" style="-fx-font-size: 14px; -fx-border-color: #4CAF50; -fx-border-width: 1; -fx-background-color: #ffffff;" wrapText="true" />
+               <TextArea fx:id="definitionTextArea" disable="true" prefHeight="300.0" prefWidth="400.0" style="-fx-border-color: #4CAF50; -fx-border-width: 1; -fx-background-color: #ffffff; -fx-text-alignment: center;" wrapText="true">
+                  <font>
+                     <Font name="Arial" size="36.0" />
+                  </font></TextArea>
             </VBox>
          </center>
          <bottom>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0" spacing="10" style="-fx-background-color: #4CAF50;" BorderPane.alignment="CENTER">
                <children>
-                  <TextField promptText="Thêm từ mới" style="-fx-padding: 10; -fx-font-size: 14px;" />
-                  <TextField promptText="Thêm định nghĩa mới" style="-fx-padding: 10; -fx-font-size: 14px;" />
-                  <Button mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-text-fill: #4CAF50; -fx-font-size: 14px; -fx-padding: 10 20;" text="Thêm từ" />
-                  <Button mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-text-fill: #4CAF50; -fx-font-size: 14px; -fx-padding: 10 20;" text="Xóa từ" />
+                  <TextField fx:id="newWordField" promptText="Thêm từ mới" style="-fx-padding: 10; -fx-font-size: 14px;" />
+                  <TextField fx:id="newDefinitionField" promptText="Thêm định nghĩa mới" style="-fx-padding: 10; -fx-font-size: 14px;" />
+                  <Button fx:id="addWordButton" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-text-fill: #4CAF50; -fx-font-size: 14px; -fx-padding: 10 20;" text="Thêm từ" />
+                  <Button fx:id="deleteWordButton" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-text-fill: #4CAF50; -fx-font-size: 14px; -fx-padding: 10 20;" text="Xóa từ" />
                </children>
             </HBox>
          </bottom>
