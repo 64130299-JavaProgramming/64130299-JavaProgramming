@@ -51,5 +51,6 @@
 https://github.com/user-attachments/assets/0da5569b-3475-4a1a-8c01-15d9908bb2eb.mp4
 
 ## **5. Ứng dụng tra cứu từ điển Anh-Việt**
-### 🔹[![Demo Video](https://img.youtube.com/vi/lgQnsDdf86c/0.jpg)](https://www.youtube.com/embed/lgQnsDdf86c?si=sPTHotHUrsKZtxMv)
+### 🔹Có thể click vào ảnh để xem demo
+[![Demo Video](https://img.youtube.com/vi/lgQnsDdf86c/0.jpg)](https://www.youtube.com/embed/lgQnsDdf86c?si=sPTHotHUrsKZtxMv)
 
