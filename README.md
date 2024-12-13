@@ -49,3 +49,6 @@
 ## **4. Ứng dụng trắc nghiệm FlashQuiz**
 ### 🔹 Video:
 https://github.com/user-attachments/assets/0da5569b-3475-4a1a-8c01-15d9908bb2eb.mp4
+
+## **5. Ứng dụng tra cứu từ điển Anh-Việt**
+### 🔹[Watch the Demo Video](https://www.youtube.com/embed/lgQnsDdf86c?si=sPTHotHUrsKZtxMv)
